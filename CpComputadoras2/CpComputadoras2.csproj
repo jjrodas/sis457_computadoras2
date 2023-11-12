@@ -87,6 +87,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadComputadoras2\CadComputadoras2.csproj">
+      <Project>{3806d404-3851-4496-923e-ce8c6c3a35ff}</Project>
+      <Name>CadComputadoras2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClnComputadoras2\ClnComputadoras2.csproj">
+      <Project>{d9c2a958-f767-40e9-bacf-12a9b416e365}</Project>
+      <Name>ClnComputadoras2</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
