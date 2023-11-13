@@ -1,0 +1,15 @@
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\ClnComputadoras2.dll.config
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\ClnComputadoras2.dll
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\ClnComputadoras2.pdb
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\CadComputadoras2.dll
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\EntityFramework.dll
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\CadComputadoras2.pdb
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\CadComputadoras2.dll.config
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\EntityFramework.xml
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\obj\Debug\ClnComputadoras2.csproj.AssemblyReference.cache
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\obj\Debug\ClnComputadoras2.csproj.CoreCompileInputs.cache
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\obj\Debug\ClnComputadoras2.csproj.CopyComplete
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\obj\Debug\ClnComputadoras2.dll
+C:\Users\jota\Desktop\SIS457Computadoras2\ClnComputadoras2\obj\Debug\ClnComputadoras2.pdb
