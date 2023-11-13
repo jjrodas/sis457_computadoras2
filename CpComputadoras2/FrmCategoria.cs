@@ -112,16 +112,16 @@ namespace CpComputadoras2
             bool esValido = true;
             erpNombre.SetError(txtNombre, "");
             erpDescripcion.SetError(txtDescripcion, "");
-            //if (string.IsNullOrEmpty(txtNombre.Text))
-            //{
-            //    esValido = false;
-            //    erpNombre.SetError(txtNombre, "El campo nombre es obligatorio.");
-            //}
-            //if (string.IsNullOrEmpty(txtDescripcion.Text))
-            //{
-            //    esValido = false;
-            //    erpDescripcion.SetError(txtDescripcion, "El campo descripción es obligatorio.");
-            //}
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                esValido = false;
+                erpNombre.SetError(txtNombre, "El campo nombre es obligatorio.");
+            }
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                esValido = false;
+                erpDescripcion.SetError(txtDescripcion, "El campo descripción es obligatorio.");
+            }
             return esValido;
         }
 

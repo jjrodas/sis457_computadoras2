@@ -10,3 +10,15 @@ C:\Users\jota\Desktop\SIS457Computadoras2\CadComputadoras2\obj\Debug\CadComputad
 C:\Users\jota\Desktop\SIS457Computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.CopyComplete
 C:\Users\jota\Desktop\SIS457Computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.dll
 C:\Users\jota\Desktop\SIS457Computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.pdb
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\CadComputadoras2.dll.config
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\CadComputadoras2.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\CadComputadoras2.pdb
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.xml
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.AssemblyReference.cache
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.CopyComplete
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.pdb
