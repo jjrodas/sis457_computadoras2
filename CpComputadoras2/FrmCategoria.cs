@@ -26,17 +26,17 @@ namespace CpComputadoras2
         }
         private void listar()
         {
-            var categorias = CategoriaCln.listarPa(txtParametro.Text.Trim());
-            dgvListaCategorias.DataSource = categorias;
+            var clientes = CategoriaCln.listarPa(txtParametro.Text.Trim());
+            dgvListaCategorias.DataSource = clientes;
             dgvListaCategorias.Columns["id"].Visible = false;
             dgvListaCategorias.Columns["estado"].Visible = false;
             dgvListaCategorias.Columns["nombre"].HeaderText = "Nombre";
             dgvListaCategorias.Columns["descripcion"].HeaderText = "Descripción";
             dgvListaCategorias.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvListaCategorias.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
-            btnEditar.Enabled = categorias.Count > 0;
-            btnEliminar.Enabled = categorias.Count > 0;
-            if (categorias.Count > 0) dgvListaCategorias.Rows[0].Cells["nombre"].Selected = true;
+            btnEditar.Enabled = clientes.Count > 0;
+            btnEliminar.Enabled = clientes.Count > 0;
+            if (clientes.Count > 0) dgvListaCategorias.Rows[0].Cells["nombre"].Selected = true;
         }
 
         private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,9 +64,9 @@ namespace CpComputadoras2
 
             int index = dgvListaCategorias.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvListaCategorias.Rows[index].Cells["id"].Value);
-            var categoria = CategoriaCln.get(id);
-            txtNombre.Text = categoria.nombre;
-            txtDescripcion.Text = categoria.descripcion;
+            var cliente = CategoriaCln.get(id);
+            txtNombre.Text = cliente.nombre;
+            txtDescripcion.Text = cliente.descripcion;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -129,22 +129,22 @@ namespace CpComputadoras2
         {
             if (validar())
             {
-                var categoria = new Categoria();
-                categoria.nombre = txtNombre.Text.Trim();
-                categoria.descripcion = txtDescripcion.Text.Trim();
-                categoria.usuarioRegistro = "LabSIS457";
+                var cliente = new Categoria();
+                cliente.nombre = txtNombre.Text.Trim();
+                cliente.descripcion = txtDescripcion.Text.Trim();
+                cliente.usuarioRegistro = "LabSIS457";
 
                 if (esNuevo)
                 {
-                    categoria.fechaRegistro = DateTime.Now;
-                    categoria.estado = 1;
-                    CategoriaCln.insertar(categoria);
+                    cliente.fechaRegistro = DateTime.Now;
+                    cliente.estado = 1;
+                    CategoriaCln.insertar(cliente);
                 }
                 else
                 {
                     int index = dgvListaCategorias.CurrentCell.RowIndex;
-                    categoria.id = Convert.ToInt32(dgvListaCategorias.Rows[index].Cells["id"].Value);
-                    CategoriaCln.actualizar(categoria);
+                    cliente.id = Convert.ToInt32(dgvListaCategorias.Rows[index].Cells["id"].Value);
+                    CategoriaCln.actualizar(cliente);
                 }
                 listar();
                 btnCancelar.PerformClick();

@@ -9,23 +9,23 @@ namespace ClnComputadoras2
 {
     public class CategoriaCln
     {
-        public static int insertar(Categoria categoria)
+        public static int insertar(Categoria cliente)
         {
             using (var context = new LabComputadoras2Entities())
             {
-                context.Categoria.Add(categoria);
+                context.Categoria.Add(cliente);
                 context.SaveChanges();
-                return categoria.id;
+                return cliente.id;
             }
         }
-        public static int actualizar(Categoria categoria)
+        public static int actualizar(Categoria cliente)
         {
             using (var context = new LabComputadoras2Entities())
             {
-                var existente = context.Categoria.Find(categoria.id);
-                existente.nombre = categoria.nombre;
-                existente.descripcion = categoria.descripcion;
-                existente.usuarioRegistro = categoria.usuarioRegistro;
+                var existente = context.Categoria.Find(cliente.id);
+                existente.nombre = cliente.nombre;
+                existente.descripcion = cliente.descripcion;
+                existente.usuarioRegistro = cliente.usuarioRegistro;
                 return context.SaveChanges();
             }
         }
