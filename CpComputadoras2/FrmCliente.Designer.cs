@@ -33,7 +33,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
-            this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
+            this.dgvListaClientes = new System.Windows.Forms.DataGridView();
             this.gbxLista = new System.Windows.Forms.GroupBox();
             this.erpNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlAcciones = new System.Windows.Forms.Panel();
@@ -45,18 +45,18 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblPrincipal = new System.Windows.Forms.Label();
-            this.CedulaIdentidad = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.primerApellido = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.segundoApellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.primerApellido = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.celular = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CedulaIdentidad = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblPrincipal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.gbxLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).BeginInit();
             this.pnlAcciones.SuspendLayout();
@@ -98,24 +98,24 @@
             this.txtParametro.TabIndex = 22;
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
-            // dgvListaCategorias
+            // dgvListaClientes
             // 
-            this.dgvListaCategorias.AllowUserToAddRows = false;
-            this.dgvListaCategorias.AllowUserToDeleteRows = false;
-            this.dgvListaCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaCategorias.Location = new System.Drawing.Point(7, 22);
-            this.dgvListaCategorias.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvListaCategorias.MultiSelect = false;
-            this.dgvListaCategorias.Name = "dgvListaCategorias";
-            this.dgvListaCategorias.ReadOnly = true;
-            this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaCategorias.Size = new System.Drawing.Size(776, 195);
-            this.dgvListaCategorias.TabIndex = 0;
+            this.dgvListaClientes.AllowUserToAddRows = false;
+            this.dgvListaClientes.AllowUserToDeleteRows = false;
+            this.dgvListaClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaClientes.Location = new System.Drawing.Point(7, 22);
+            this.dgvListaClientes.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvListaClientes.MultiSelect = false;
+            this.dgvListaClientes.Name = "dgvListaClientes";
+            this.dgvListaClientes.ReadOnly = true;
+            this.dgvListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaClientes.Size = new System.Drawing.Size(776, 195);
+            this.dgvListaClientes.TabIndex = 0;
             // 
             // gbxLista
             // 
-            this.gbxLista.Controls.Add(this.dgvListaCategorias);
+            this.gbxLista.Controls.Add(this.dgvListaClientes);
             this.gbxLista.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxLista.Location = new System.Drawing.Point(44, 95);
             this.gbxLista.Name = "gbxLista";
@@ -244,6 +244,78 @@
             this.gbxDatos.Text = "Datos del cliente";
             this.gbxDatos.Enter += new System.EventHandler(this.gbxDatos_Enter);
             // 
+            // segundoApellido
+            // 
+            this.segundoApellido.Location = new System.Drawing.Point(141, 118);
+            this.segundoApellido.MaxLength = 250;
+            this.segundoApellido.Name = "segundoApellido";
+            this.segundoApellido.Size = new System.Drawing.Size(212, 26);
+            this.segundoApellido.TabIndex = 33;
+            this.segundoApellido.TextChanged += new System.EventHandler(this.segundoApellido_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 19);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Ap. Materno:";
+            // 
+            // primerApellido
+            // 
+            this.primerApellido.Location = new System.Drawing.Point(141, 68);
+            this.primerApellido.MaxLength = 250;
+            this.primerApellido.Name = "primerApellido";
+            this.primerApellido.Size = new System.Drawing.Size(212, 26);
+            this.primerApellido.TabIndex = 31;
+            this.primerApellido.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 19);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Ap. Paterno:";
+            // 
+            // celular
+            // 
+            this.celular.Location = new System.Drawing.Point(482, 75);
+            this.celular.MaxLength = 250;
+            this.celular.Name = "celular";
+            this.celular.Size = new System.Drawing.Size(123, 26);
+            this.celular.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(388, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 19);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Celular:";
+            // 
+            // CedulaIdentidad
+            // 
+            this.CedulaIdentidad.Location = new System.Drawing.Point(482, 25);
+            this.CedulaIdentidad.MaxLength = 250;
+            this.CedulaIdentidad.Name = "CedulaIdentidad";
+            this.CedulaIdentidad.Size = new System.Drawing.Size(123, 26);
+            this.CedulaIdentidad.TabIndex = 27;
+            this.CedulaIdentidad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(388, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 19);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "C. Identidad:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -267,78 +339,6 @@
             this.lblPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblPrincipal.Click += new System.EventHandler(this.lblPrincipal_Click);
             // 
-            // CedulaIdentidad
-            // 
-            this.CedulaIdentidad.Location = new System.Drawing.Point(482, 25);
-            this.CedulaIdentidad.MaxLength = 250;
-            this.CedulaIdentidad.Name = "CedulaIdentidad";
-            this.CedulaIdentidad.Size = new System.Drawing.Size(123, 26);
-            this.CedulaIdentidad.TabIndex = 27;
-            this.CedulaIdentidad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(388, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 19);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "C. Identidad:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(388, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Celular:";
-            // 
-            // primerApellido
-            // 
-            this.primerApellido.Location = new System.Drawing.Point(141, 68);
-            this.primerApellido.MaxLength = 250;
-            this.primerApellido.Name = "primerApellido";
-            this.primerApellido.Size = new System.Drawing.Size(212, 26);
-            this.primerApellido.TabIndex = 31;
-            this.primerApellido.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 19);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Ap. Paterno:";
-            // 
-            // segundoApellido
-            // 
-            this.segundoApellido.Location = new System.Drawing.Point(141, 118);
-            this.segundoApellido.MaxLength = 250;
-            this.segundoApellido.Name = "segundoApellido";
-            this.segundoApellido.Size = new System.Drawing.Size(212, 26);
-            this.segundoApellido.TabIndex = 33;
-            this.segundoApellido.TextChanged += new System.EventHandler(this.segundoApellido_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 19);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Ap. Materno:";
-            // 
-            // celular
-            // 
-            this.celular.Location = new System.Drawing.Point(482, 75);
-            this.celular.MaxLength = 250;
-            this.celular.Name = "celular";
-            this.celular.Size = new System.Drawing.Size(123, 26);
-            this.celular.TabIndex = 29;
-            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,7 +356,7 @@
             this.Text = "FrmCliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).EndInit();
             this.gbxLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).EndInit();
             this.pnlAcciones.ResumeLayout(false);
@@ -374,7 +374,7 @@
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.GroupBox gbxLista;
-        private System.Windows.Forms.DataGridView dgvListaCategorias;
+        private System.Windows.Forms.DataGridView dgvListaClientes;
         private System.Windows.Forms.Panel pnlAcciones;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnEliminar;
