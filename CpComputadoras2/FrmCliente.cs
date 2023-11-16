@@ -53,18 +53,18 @@ namespace CpComputadoras2
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 esValido = false;
-                erpNombre.SetError(txtNombre, "El campo nombre es obligatorio.");
+                erpNombres.SetError(txtNombre, "El campo nombre es obligatorio.");
             }
             if (string.IsNullOrEmpty(primerApellido.Text))
             {
                 esValido = false;
-                erpDescripcion.SetError(primerApellido, "El campo descripción es obligatorio.");
+                erpprimerApellido.SetError(primerApellido, "El campo descripción es obligatorio.");
             }
 
             if (string.IsNullOrEmpty(CedulaIdentidad.Text))
             {
                 esValido = false;
-                erpDescripcion.SetError(CedulaIdentidad, "El campo descripción es obligatorio.");
+                erpcedulaIdentidad.SetError(CedulaIdentidad, "El campo descripción es obligatorio.");
             }
             return esValido;
         }
@@ -75,7 +75,7 @@ namespace CpComputadoras2
             primerApellido.Text = string.Empty;
             segundoApellido.Text = string.Empty;
             CedulaIdentidad.Text = string.Empty;
-            celular.Text = string.Empty;
+            celular.Value = 0;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -192,7 +192,7 @@ namespace CpComputadoras2
                 cliente.primerApellido = primerApellido.Text.Trim();
                 cliente.segundoApellido = segundoApellido.Text.Trim();
                 cliente.cedulaIdentidad = CedulaIdentidad.Text.Trim();
-                cliente.celular = celular.Text.Trim();
+                cliente.celular = celular.Value;
                 cliente.usuarioRegistro = "LabSIS457";
 
                 if (esNuevo)

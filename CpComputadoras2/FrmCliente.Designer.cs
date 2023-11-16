@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.erpDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.dgvListaClientes = new System.Windows.Forms.DataGridView();
             this.gbxLista = new System.Windows.Forms.GroupBox();
-            this.erpNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlAcciones = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -55,17 +53,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblPrincipal = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).BeginInit();
+            this.erpNombres = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpprimerApellido = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpcedulaIdentidad = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).BeginInit();
             this.gbxLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).BeginInit();
             this.pnlAcciones.SuspendLayout();
             this.gbxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNombres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpprimerApellido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpcedulaIdentidad)).BeginInit();
             this.SuspendLayout();
-            // 
-            // erpDescripcion
-            // 
-            this.erpDescripcion.ContainerControl = this;
             // 
             // btnBuscar
             // 
@@ -124,10 +122,6 @@
             this.gbxLista.TabStop = false;
             this.gbxLista.Text = "Lista de clientes";
             this.gbxLista.Enter += new System.EventHandler(this.gbxLista_Enter);
-            // 
-            // erpNombre
-            // 
-            this.erpNombre.ContainerControl = this;
             // 
             // pnlAcciones
             // 
@@ -339,6 +333,18 @@
             this.lblPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblPrincipal.Click += new System.EventHandler(this.lblPrincipal_Click);
             // 
+            // erpNombres
+            // 
+            this.erpNombres.ContainerControl = this;
+            // 
+            // erpprimerApellido
+            // 
+            this.erpprimerApellido.ContainerControl = this;
+            // 
+            // erpcedulaIdentidad
+            // 
+            this.erpcedulaIdentidad.ContainerControl = this;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,21 +361,20 @@
             this.Name = "FrmCliente";
             this.Text = "FrmCliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaClientes)).EndInit();
             this.gbxLista.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).EndInit();
             this.pnlAcciones.ResumeLayout(false);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNombres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpprimerApellido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpcedulaIdentidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ErrorProvider erpDescripcion;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtParametro;
@@ -386,7 +391,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblPrincipal;
-        private System.Windows.Forms.ErrorProvider erpNombre;
         private System.Windows.Forms.TextBox CedulaIdentidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox segundoApellido;
@@ -395,5 +399,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox celular;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider erpNombres;
+        private System.Windows.Forms.ErrorProvider erpprimerApellido;
+        private System.Windows.Forms.ErrorProvider erpcedulaIdentidad;
     }
 }
