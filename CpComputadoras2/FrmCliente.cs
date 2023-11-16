@@ -40,7 +40,7 @@ namespace CpComputadoras2
             dgvListaClientes.Columns["estado"].Visible = false;
             btnEditar.Enabled = clientes.Count > 0;
             btnEliminar.Enabled = clientes.Count > 0;
-            if (clientes.Count > 0) dgvListaClientes.Rows[0].Cells["nombre"].Selected = true;
+            if (clientes.Count > 0) dgvListaClientes.Rows[0].Cells["nombres"].Selected = true;
         }
 
         private bool validar()
@@ -75,7 +75,7 @@ namespace CpComputadoras2
             primerApellido.Text = string.Empty;
             segundoApellido.Text = string.Empty;
             CedulaIdentidad.Text = string.Empty;
-            celular.Value = 0;
+            celular.Text = string.Empty;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -132,7 +132,7 @@ namespace CpComputadoras2
             primerApellido.Text = cliente.primerApellido;
             segundoApellido.Text = cliente.segundoApellido;
             CedulaIdentidad.Text = cliente.cedulaIdentidad;
-            celular.Value = cliente.celular;
+            celular.Text = Convert.ToString(cliente.celular);
 
         }
 
@@ -192,7 +192,7 @@ namespace CpComputadoras2
                 cliente.primerApellido = primerApellido.Text.Trim();
                 cliente.segundoApellido = segundoApellido.Text.Trim();
                 cliente.cedulaIdentidad = CedulaIdentidad.Text.Trim();
-                cliente.celular = celular.Value;
+                cliente.celular = Convert.ToInt64(celular.Text);
                 cliente.usuarioRegistro = "LabSIS457";
 
                 if (esNuevo)

@@ -40,3 +40,4 @@ C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputad
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.CopyComplete
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.exe
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.pdb
+C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmCliente.resources
