@@ -132,7 +132,7 @@ namespace CpComputadoras2
             primerApellido.Text = cliente.primerApellido;
             segundoApellido.Text = cliente.segundoApellido;
             CedulaIdentidad.Text = cliente.cedulaIdentidad;
-            celular.Text = cliente.celular;
+            celular.Value = cliente.celular;
 
         }
 
@@ -170,8 +170,8 @@ namespace CpComputadoras2
                 "::: Compumundo - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialog == DialogResult.OK)
             {
-                ClientesCln.eliminar(id, "SIS457");
-                listar();
+                ClienteCln.eliminar(id, "SIS457");
+                listarCliente();
                 MessageBox.Show("Cliente dado de baja correctamente", "::: Compumundo - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
