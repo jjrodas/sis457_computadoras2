@@ -32,9 +32,8 @@ namespace CpComputadoras2
             dgvListaClientes.Columns["id"].Visible = false;
             dgvListaClientes.Columns["cedulaIdentidad"].HeaderText = "CI";
             dgvListaClientes.Columns["nombres"].HeaderText = "Nombres";
-            dgvListaClientes.Columns["primerApellido"].HeaderText = "Apellido Paterno";
-            dgvListaClientes.Columns["segundoApellido"].HeaderText = "Apellido Materno";
-            dgvListaClientes.Columns["celular"].HeaderText = "Celular";
+            dgvListaClientes.Columns["apellidos"].HeaderText = "Apellidos";
+            dgvListaClientes.Columns["telefono"].HeaderText = "N° de Teléfono";
             dgvListaClientes.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvListaClientes.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
             dgvListaClientes.Columns["estado"].Visible = false;
@@ -46,36 +45,41 @@ namespace CpComputadoras2
         private bool validar()
         {
             bool esValido = true;
-            erpNombres.SetError(txtNombre, "");
-            erpprimerApellido.SetError(primerApellido, "");
-            erpcedulaIdentidad.SetError(CedulaIdentidad, "");
+            erpNombres.SetError(txtApellidos, "");
+            erpApellidos.SetError(txtNombres, "");
+            erpCedulaIdentidad.SetError(txtCedulaIdentidad, "");
+            erpTelefono.SetError(txtTelefono, "");
 
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            if (string.IsNullOrEmpty(txtApellidos.Text))
             {
                 esValido = false;
-                erpNombres.SetError(txtNombre, "El campo nombre es obligatorio.");
+                erpNombres.SetError(txtApellidos, "El campo nombres es obligatorio.");
             }
-            if (string.IsNullOrEmpty(primerApellido.Text))
+            if (string.IsNullOrEmpty(txtNombres.Text))
             {
                 esValido = false;
-                erpprimerApellido.SetError(primerApellido, "El campo descripción es obligatorio.");
+                erpApellidos.SetError(txtNombres, "El campo apellidos es obligatorio.");
             }
 
-            if (string.IsNullOrEmpty(CedulaIdentidad.Text))
+            if (string.IsNullOrEmpty(txtCedulaIdentidad.Text))
             {
                 esValido = false;
-                erpcedulaIdentidad.SetError(CedulaIdentidad, "El campo descripción es obligatorio.");
+                erpCedulaIdentidad.SetError(txtCedulaIdentidad, "El campo cédula de identidad es obligatorio.");
+            }
+            if (string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                esValido = false;
+                erpTelefono.SetError(txtTelefono, "El campo número de teléfono es obligatorio.");
             }
             return esValido;
         }
 
         private void limpiarCliente()
         {
-            txtNombre.Text = string.Empty;
-            primerApellido.Text = string.Empty;
-            segundoApellido.Text = string.Empty;
-            CedulaIdentidad.Text = string.Empty;
-            celular.Text = string.Empty;
+            txtNombres.Text = string.Empty;
+            txtApellidos.Text = string.Empty;
+            txtCedulaIdentidad.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -112,12 +116,13 @@ namespace CpComputadoras2
         {
             esNuevo = true;
             Size = new Size(961, 600);
-            txtNombre.Focus();
+            txtCedulaIdentidad.Focus();
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             Size = new Size(961, 418);
+            listarCliente();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -128,11 +133,10 @@ namespace CpComputadoras2
             int index = dgvListaClientes.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvListaClientes.Rows[index].Cells["id"].Value);
             var cliente = ClienteCln.get(id);
-            txtNombre.Text = cliente.nombres;
-            primerApellido.Text = cliente.primerApellido;
-            segundoApellido.Text = cliente.segundoApellido;
-            CedulaIdentidad.Text = cliente.cedulaIdentidad;
-            celular.Text = Convert.ToString(cliente.celular);
+            txtCedulaIdentidad.Text = cliente.cedulaIdentidad;
+            txtNombres.Text = cliente.apellidos;
+            txtApellidos.Text = cliente.nombres;
+            txtTelefono.Text = cliente.telefono;
 
         }
 
@@ -165,7 +169,7 @@ namespace CpComputadoras2
         {
             int index = dgvListaClientes.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvListaClientes.Rows[index].Cells["id"].Value);
-            string nombres = dgvListaClientes.Rows[index].Cells["nombre"].Value.ToString();
+            string nombres = dgvListaClientes.Rows[index].Cells["nombres"].Value.ToString();
             DialogResult dialog = MessageBox.Show($"¿Está seguro que desea dar de baja al cliente {nombres}?",
                 "::: Compumundo - Mensaje :::", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialog == DialogResult.OK)
@@ -188,11 +192,10 @@ namespace CpComputadoras2
             if (validar())
             {
                 var cliente = new Cliente();
-                cliente.nombres = txtNombre.Text.Trim();
-                cliente.primerApellido = primerApellido.Text.Trim();
-                cliente.segundoApellido = segundoApellido.Text.Trim();
-                cliente.cedulaIdentidad = CedulaIdentidad.Text.Trim();
-                cliente.celular = Convert.ToInt64(celular.Text);
+                cliente.cedulaIdentidad = txtCedulaIdentidad.Text.Trim();
+                cliente.nombres = txtNombres.Text.Trim();
+                cliente.apellidos = txtApellidos.Text.Trim();
+                cliente.telefono = txtTelefono.Text.Trim();
                 cliente.usuarioRegistro = "LabSIS457";
 
                 if (esNuevo)

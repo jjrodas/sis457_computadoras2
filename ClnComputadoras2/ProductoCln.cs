@@ -24,10 +24,10 @@ namespace ClnComputadoras2
             using (var context = new LabComputadoras2Entities())
             {
                 var existente = context.Producto.Find(producto.id);
-                existente.idCategoria = producto.idCategoria;
                 existente.codigo = producto.codigo;
                 existente.descripcion = producto.descripcion;
                 existente.marca = producto.marca;
+                existente.categoria = producto.categoria;
                 existente.precioVenta = producto.precioVenta;
                 existente.usuarioRegistro = producto.usuarioRegistro;
                 existente.fechaRegistro = producto.fechaRegistro;

@@ -21,7 +21,7 @@ namespace CadComputadoras2
         }
     
         public int id { get; set; }
-        public int idUsuario { get; set; }
+        public int idPersonal { get; set; }
         public int idCliente { get; set; }
         public System.DateTime fecha { get; set; }
         public string usuarioRegistro { get; set; }
@@ -29,7 +29,7 @@ namespace CadComputadoras2
         public short estado { get; set; }
     
         public virtual Cliente Cliente { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public virtual Personal Personal { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VentaDetalle> VentaDetalle { get; set; }
     }

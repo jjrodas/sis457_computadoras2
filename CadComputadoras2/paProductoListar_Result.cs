@@ -14,10 +14,10 @@ namespace CadComputadoras2
     public partial class paProductoListar_Result
     {
         public int id { get; set; }
-        public int idCategoria { get; set; }
         public string codigo { get; set; }
         public string descripcion { get; set; }
         public string marca { get; set; }
+        public string categoria { get; set; }
         public decimal precioVenta { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }

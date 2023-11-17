@@ -26,11 +26,10 @@ namespace ClnComputadoras2
                 var existente = context.Cliente.Find(cliente.id);
                 existente.cedulaIdentidad = cliente.cedulaIdentidad;
                 existente.nombres = cliente.nombres;
-                existente.primerApellido = cliente.primerApellido;
-                existente.segundoApellido = cliente.segundoApellido;
-                existente.celular = cliente.celular;
+                existente.apellidos = cliente.apellidos;
+                existente.telefono = cliente.telefono;
                 existente.usuarioRegistro = cliente.usuarioRegistro;
-                existente.fechaRegistro = cliente.fechaRegistro;
+                //existente.fechaRegistro = cliente.fechaRegistro;
                 existente.estado = cliente.estado;
                 return context.SaveChanges();
             }
