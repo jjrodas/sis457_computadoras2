@@ -41,6 +41,8 @@
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.lblPrincipal = new System.Windows.Forms.Label();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
             this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.erpCodigo = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
             this.erpMarca = new System.Windows.Forms.ErrorProvider(this.components);
@@ -227,9 +227,29 @@
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Detalles del producto";
             // 
+            // cbxCategoria
+            // 
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Items.AddRange(new object[] {
+            "Accesorios",
+            "Periféricos",
+            "Laptops"});
+            this.cbxCategoria.Location = new System.Drawing.Point(596, 67);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(134, 27);
+            this.cbxCategoria.TabIndex = 31;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(467, 70);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(71, 19);
+            this.lblCategoria.TabIndex = 30;
+            this.lblCategoria.Text = "Categoría:";
+            // 
             // nudPrecioVenta
             // 
-            this.nudPrecioVenta.DecimalPlaces = 2;
             this.nudPrecioVenta.Location = new System.Drawing.Point(596, 105);
             this.nudPrecioVenta.Maximum = new decimal(new int[] {
             10000,
@@ -326,27 +346,6 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(467, 70);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(71, 19);
-            this.lblCategoria.TabIndex = 30;
-            this.lblCategoria.Text = "Categoría:";
-            // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Items.AddRange(new object[] {
-            "Accesorios",
-            "Periféricos",
-            "Laptops"});
-            this.cbxCategoria.Location = new System.Drawing.Point(596, 67);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(134, 27);
-            this.cbxCategoria.TabIndex = 31;
             // 
             // erpCodigo
             // 

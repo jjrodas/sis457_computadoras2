@@ -103,7 +103,7 @@
             this.dgvListaClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaClientes.Location = new System.Drawing.Point(7, 22);
-            this.dgvListaClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListaClientes.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaClientes.MultiSelect = false;
             this.dgvListaClientes.Name = "dgvListaClientes";
             this.dgvListaClientes.ReadOnly = true;
@@ -221,7 +221,7 @@
             this.gbxDatos.Controls.Add(this.btnCancelar);
             this.gbxDatos.Controls.Add(this.btnGuardar);
             this.gbxDatos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxDatos.Location = new System.Drawing.Point(42, 404);
+            this.gbxDatos.Location = new System.Drawing.Point(42, 391);
             this.gbxDatos.Name = "gbxDatos";
             this.gbxDatos.Size = new System.Drawing.Size(790, 151);
             this.gbxDatos.TabIndex = 27;
@@ -335,7 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aquamarine;
-            this.ClientSize = new System.Drawing.Size(856, 456);
+            this.ClientSize = new System.Drawing.Size(900, 554);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.txtParametro);

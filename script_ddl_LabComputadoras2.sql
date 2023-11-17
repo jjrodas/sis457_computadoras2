@@ -37,14 +37,27 @@ CREATE TABLE Cliente (
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1
 );
-CREATE TABLE Personal (
+CREATE TABLE Empleado (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-  usuario VARCHAR(15) NOT NULL,
+  cedulaIdentidad VARCHAR(15) NOT NULL,
+  nombres VARCHAR(50) NOT NULL,
+  apellidos VARCHAR(50) NOT NULL,
+  direccion VARCHAR(200) NOT NULL,
+  celular INT NOT NULL,
+  cargo VARCHAR(30) NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1
+);
+CREATE TABLE Usuario (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idEmpleado INT NOT NULL,
+  nombreUsuario VARCHAR(15) NOT NULL,
   clave VARCHAR(30) NOT NULL,
-  rol VARCHAR(30) NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1,
+  CONSTRAINT fk_Usuario_Empleado FOREIGN KEY(idEmpleado) REFERENCES Empleado(id)
 );
 CREATE TABLE Venta (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
@@ -83,23 +96,15 @@ AS
   SELECT id,cedulaIdentidad,nombres,apellidos,telefono,usuarioRegistro,fechaRegistro,estado
   FROM Cliente
   WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro,' ','%')+'%';
-
--- Procedimientos almacenados aún no creados
-
-CREATE PROC paPersonalListar @parametro VARCHAR(50)
+CREATE PROC paEmpleadoListar @parametro VARCHAR(50)
 AS
-  SELECT id,usuario,clave,rol,usuarioRegistro,fechaRegistro,estado
-  FROM Usuario
-  WHERE estado<>-1 AND usuario LIKE '%'+REPLACE(@parametro,' ','%')+'%';
-
-CREATE PROC paVentaListar @parametro VARCHAR(50)
+  SELECT id,cedulaIdentidad,nombres,apellidos,direccion,celular,cargo,usuarioRegistro,fechaRegistro,estado
+  FROM Empleado
+  WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro,' ','%')+'%';
+CREATE PROC paUsuarioListar @parametro VARCHAR(50)
 AS
-  SELECT id,idUsuario,idCliente,fecha,usuarioRegistro,fechaRegistro,estado
-  FROM Venta
-  WHERE estado<>-1 AND descripcion LIKE '%'+REPLACE(@parametro,' ','%')+'%';
+  SELECT us.id,idEmpleado,emp.cedulaIdentidad,us.nombreUsuario,us.clave,
+  us.usuarioRegistro,us.fechaRegistro,us.estado
 
-CREATE PROC paVentaDetalleListar @parametro VARCHAR(50)
-AS
-  SELECT id,idProducto,idVenta,precioUnitario,cantidad,precioVenta,total,usuarioRegistro,fechaRegistro,estado
-  FROM VentaDetalle
-  WHERE estado<>-1 AND descripcion LIKE '%'+REPLACE(@parametro,' ','%')+'%';
+  FROM Usuario us INNER JOIN Empleado emp ON us.idEmpleado = emp.id
+  WHERE us.estado<>-1 AND emp.cedulaIdentidad LIKE '%'+REPLACE(@parametro,' ','%')+'%';
