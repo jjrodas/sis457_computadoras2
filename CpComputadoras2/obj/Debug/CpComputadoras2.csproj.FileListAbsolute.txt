@@ -33,7 +33,6 @@ C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\bin\Debug\ClnComputa
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\bin\Debug\EntityFramework.xml
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.AssemblyReference.cache
-C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmCategoria.resources
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.Properties.Resources.resources
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.GenerateResource.cache
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.CoreCompileInputs.cache
@@ -84,3 +83,4 @@ C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputado
 C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.exe
 C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.pdb
 C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmProducto.resources
+C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmProducto.resources
