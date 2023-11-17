@@ -12,25 +12,26 @@ namespace CadComputadoras2
     using System;
     using System.Collections.Generic;
     
-    public partial class Venta
+    public partial class Empleado
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Venta()
+        public Empleado()
         {
-            this.VentaDetalle = new HashSet<VentaDetalle>();
+            this.Usuario = new HashSet<Usuario>();
         }
     
         public int id { get; set; }
-        public int idUsuario { get; set; }
-        public int idCliente { get; set; }
-        public System.DateTime fecha { get; set; }
+        public string cedulaIdentidad { get; set; }
+        public string nombres { get; set; }
+        public string apellidos { get; set; }
+        public string direccion { get; set; }
+        public int celular { get; set; }
+        public string cargo { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
     
-        public virtual Cliente Cliente { get; set; }
-        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VentaDetalle> VentaDetalle { get; set; }
+        public virtual ICollection<Usuario> Usuario { get; set; }
     }
 }

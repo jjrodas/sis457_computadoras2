@@ -5,16 +5,18 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6796c0bb434e4928a73639d119561d33" Name="Diagram1">
-        <EntityTypeShape EntityType="LabComputadoras2Model.Personal" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LabComputadoras2Model.Producto" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LabComputadoras2Model.Cliente" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="LabComputadoras2Model.Venta" Width="1.5" PointX="3.375" PointY="1" />
-        <EntityTypeShape EntityType="LabComputadoras2Model.VentaDetalle" Width="1.5" PointX="5.625" PointY="3" />
+        <EntityTypeShape EntityType="LabComputadoras2Model.Empleado" Width="1.5" PointX="3.375" PointY="1" />
+        <EntityTypeShape EntityType="LabComputadoras2Model.Usuario" Width="1.5" PointX="5.625" PointY="1.125" />
+        <EntityTypeShape EntityType="LabComputadoras2Model.Venta" Width="1.5" PointX="7.875" PointY="1" />
+        <EntityTypeShape EntityType="LabComputadoras2Model.VentaDetalle" Width="1.5" PointX="10.125" PointY="3" />
         <AssociationConnector Association="LabComputadoras2Model.fk_Venta_CLiente" />
-        <AssociationConnector Association="LabComputadoras2Model.fk_Venta_Personal" />
+        <AssociationConnector Association="LabComputadoras2Model.fk_Usuario_Empleado" />
         <AssociationConnector Association="LabComputadoras2Model.fk_VentaDetalle_Producto" />
+        <AssociationConnector Association="LabComputadoras2Model.fk_Venta_Usuario" />
         <AssociationConnector Association="LabComputadoras2Model.fk_VentaDetalle_Venta" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

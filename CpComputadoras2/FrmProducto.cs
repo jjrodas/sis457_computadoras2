@@ -177,7 +177,7 @@ namespace CpComputadoras2
                 }
                 listar();
                 btnCancelar.PerformClick();
-                MessageBox.Show("Producto guardado correctamente", "::: CompumundoBAC - Mensaje :::",
+                MessageBox.Show("Producto guardado correctamente", "::: Compumundo - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

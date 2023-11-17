@@ -1,18 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LabComputadoras2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Personal">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="rol" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="estado" Type="Int16" Nullable="false" />
-    <NavigationProperty Name="Venta" Relationship="LabComputadoras2Model.fk_Venta_Personal" FromRole="Personal" ToRole="Venta" />
-  </EntityType>
   <EntityType Name="Producto">
     <Key>
       <PropertyRef Name="id" />
@@ -29,31 +16,42 @@
     <NavigationProperty Name="VentaDetalle" Relationship="LabComputadoras2Model.fk_VentaDetalle_Producto" FromRole="Producto" ToRole="VentaDetalle" />
   </EntityType>
   <EntityContainer Name="LabComputadoras2Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Personal" EntityType="Self.Personal" />
     <EntitySet Name="Producto" EntityType="Self.Producto" />
     <FunctionImport Name="paProductoListar" ReturnType="Collection(LabComputadoras2Model.paProductoListar_Result)">
       <Parameter Name="parametro" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="Cliente" EntityType="LabComputadoras2Model.Cliente" />
+    <FunctionImport Name="paClienteListar" ReturnType="Collection(LabComputadoras2Model.paClienteListar_Result)">
+      <Parameter Name="parametro" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Empleado" EntityType="LabComputadoras2Model.Empleado" />
+    <EntitySet Name="Usuario" EntityType="LabComputadoras2Model.Usuario" />
     <EntitySet Name="Venta" EntityType="LabComputadoras2Model.Venta" />
     <EntitySet Name="VentaDetalle" EntityType="LabComputadoras2Model.VentaDetalle" />
     <AssociationSet Name="fk_Venta_CLiente" Association="LabComputadoras2Model.fk_Venta_CLiente">
       <End Role="Cliente" EntitySet="Cliente" />
       <End Role="Venta" EntitySet="Venta" />
     </AssociationSet>
-    <AssociationSet Name="fk_Venta_Personal" Association="LabComputadoras2Model.fk_Venta_Personal">
-      <End Role="Personal" EntitySet="Personal" />
-      <End Role="Venta" EntitySet="Venta" />
+    <AssociationSet Name="fk_Usuario_Empleado" Association="LabComputadoras2Model.fk_Usuario_Empleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="Usuario" EntitySet="Usuario" />
     </AssociationSet>
     <AssociationSet Name="fk_VentaDetalle_Producto" Association="LabComputadoras2Model.fk_VentaDetalle_Producto">
       <End Role="Producto" EntitySet="Producto" />
       <End Role="VentaDetalle" EntitySet="VentaDetalle" />
     </AssociationSet>
+    <AssociationSet Name="fk_Venta_Usuario" Association="LabComputadoras2Model.fk_Venta_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
     <AssociationSet Name="fk_VentaDetalle_Venta" Association="LabComputadoras2Model.fk_VentaDetalle_Venta">
       <End Role="Venta" EntitySet="Venta" />
       <End Role="VentaDetalle" EntitySet="VentaDetalle" />
     </AssociationSet>
-    <FunctionImport Name="paClienteListar" ReturnType="Collection(LabComputadoras2Model.paClienteListar_Result)">
+    <FunctionImport Name="paUsuarioListar" ReturnType="Collection(LabComputadoras2Model.paUsuarioListar_Result)">
+      <Parameter Name="parametro" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="paEmpleadoListar" ReturnType="Collection(LabComputadoras2Model.paEmpleadoListar_Result)">
       <Parameter Name="parametro" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
@@ -82,19 +80,59 @@
     <Property Name="estado" Type="Int16" Nullable="false" />
     <NavigationProperty Name="Venta" Relationship="LabComputadoras2Model.fk_Venta_CLiente" FromRole="Cliente" ToRole="Venta" />
   </EntityType>
+  <ComplexType Name="paClienteListar_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="telefono" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
+    <Property Type="Int16" Name="estado" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cedulaIdentidad" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="nombres" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direccion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="Int32" Nullable="false" />
+    <Property Name="cargo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="LabComputadoras2Model.fk_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="clave" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="estado" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Empleado" Relationship="LabComputadoras2Model.fk_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />
+    <NavigationProperty Name="Venta" Relationship="LabComputadoras2Model.fk_Venta_Usuario" FromRole="Usuario" ToRole="Venta" />
+  </EntityType>
   <EntityType Name="Venta">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idPersonal" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
     <Property Name="idCliente" Type="Int32" Nullable="false" />
     <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="usuarioRegistro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="estado" Type="Int16" Nullable="false" />
     <NavigationProperty Name="Cliente" Relationship="LabComputadoras2Model.fk_Venta_CLiente" FromRole="Venta" ToRole="Cliente" />
-    <NavigationProperty Name="Personal" Relationship="LabComputadoras2Model.fk_Venta_Personal" FromRole="Venta" ToRole="Personal" />
+    <NavigationProperty Name="Usuario" Relationship="LabComputadoras2Model.fk_Venta_Usuario" FromRole="Venta" ToRole="Usuario" />
     <NavigationProperty Name="VentaDetalle" Relationship="LabComputadoras2Model.fk_VentaDetalle_Venta" FromRole="Venta" ToRole="VentaDetalle" />
   </EntityType>
   <EntityType Name="VentaDetalle">
@@ -125,15 +163,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_Venta_Personal">
-    <End Type="LabComputadoras2Model.Personal" Role="Personal" Multiplicity="1" />
-    <End Type="LabComputadoras2Model.Venta" Role="Venta" Multiplicity="*" />
+  <Association Name="fk_Usuario_Empleado">
+    <End Type="LabComputadoras2Model.Empleado" Role="Empleado" Multiplicity="1" />
+    <End Type="LabComputadoras2Model.Usuario" Role="Usuario" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Personal">
+      <Principal Role="Empleado">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Venta">
-        <PropertyRef Name="idPersonal" />
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idEmpleado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -149,6 +187,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_Venta_Usuario">
+    <End Type="LabComputadoras2Model.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="LabComputadoras2Model.Venta" Role="Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_VentaDetalle_Venta">
     <End Type="LabComputadoras2Model.Venta" Role="Venta" Multiplicity="1" />
     <End Type="LabComputadoras2Model.VentaDetalle" Role="VentaDetalle" Multiplicity="*" />
@@ -161,12 +211,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="paClienteListar_Result">
+  <ComplexType Name="paUsuarioListar_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="idEmpleado" Nullable="false" />
+    <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="nombreUsuario" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="clave" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
+    <Property Type="Int16" Name="estado" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="paEmpleadoListar_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
-    <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
-    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
-    <Property Type="String" Name="telefono" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="nombres" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="direccion" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="celular" Nullable="false" />
+    <Property Type="String" Name="cargo" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
     <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
     <Property Type="Int16" Name="estado" Nullable="false" />
