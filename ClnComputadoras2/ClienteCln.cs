@@ -29,7 +29,6 @@ namespace ClnComputadoras2
                 existente.apellidos = cliente.apellidos;
                 existente.telefono = cliente.telefono;
                 existente.usuarioRegistro = cliente.usuarioRegistro;
-                //existente.fechaRegistro = cliente.fechaRegistro;
                 existente.estado = cliente.estado;
                 return context.SaveChanges();
             }

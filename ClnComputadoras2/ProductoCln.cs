@@ -30,7 +30,6 @@ namespace ClnComputadoras2
                 existente.categoria = producto.categoria;
                 existente.precioVenta = producto.precioVenta;
                 existente.usuarioRegistro = producto.usuarioRegistro;
-                existente.fechaRegistro = producto.fechaRegistro;
                 existente.estado = producto.estado;
                 return context.SaveChanges();
             }
