@@ -61,13 +61,13 @@ CREATE TABLE Usuario (
 );
 CREATE TABLE Venta (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-  idPersonal INT NOT NULL,
+  idUsuario INT NOT NULL,
   idCliente INT NOT NULL,
   fecha DATE NOT NULL DEFAULT GETDATE(),
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1,
-  CONSTRAINT fk_Venta_Personal FOREIGN KEY(idPersonal) REFERENCES Personal(id),
+  CONSTRAINT fk_Venta_Usuario FOREIGN KEY(idUsuario) REFERENCES Usuario(id),
   CONSTRAINT fk_Venta_CLiente FOREIGN KEY(idCliente) REFERENCES Cliente(id)
 );
 CREATE TABLE VentaDetalle (

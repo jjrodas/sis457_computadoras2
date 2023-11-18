@@ -14,10 +14,12 @@ namespace CpComputadoras2
 {
     public partial class FrmEmpleado : Form
     {
+        FrmPrincipal frmPrincipal;
         bool esNuevo = false;
-        public FrmEmpleado()
+        public FrmEmpleado(FrmPrincipal frmPrincipal)
         {
             InitializeComponent();
+            this.frmPrincipal = frmPrincipal;
         }
         private void listar()
         {
@@ -184,6 +186,11 @@ namespace CpComputadoras2
                 MessageBox.Show("Empleado guardado correctamente", "::: Compumundo - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FrmEmpleado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmPrincipal.Visible = true;
         }
     }
 }

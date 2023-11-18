@@ -14,10 +14,12 @@ namespace CpComputadoras2
 {
     public partial class FrmProducto : Form
     {
+        FrmPrincipal frmPrincipal;
         bool esNuevo = false;
-        public FrmProducto()
+        public FrmProducto(FrmPrincipal frmPrincipal)
         {
             InitializeComponent();
+            this.frmPrincipal = frmPrincipal;
         }
         private void listar()
         {
@@ -180,6 +182,11 @@ namespace CpComputadoras2
                 MessageBox.Show("Producto guardado correctamente", "::: Compumundo - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FrmProducto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmPrincipal.Visible = true;
         }
     }
 }

@@ -14,11 +14,13 @@ namespace CpComputadoras2
 {
     public partial class FrmCliente : Form
     {
+        FrmPrincipal frmPrincipal;
         bool esNuevo = false;
         
-        public FrmCliente()
+        public FrmCliente(FrmPrincipal frmPrincipal)
         {
             InitializeComponent();
+            this.frmPrincipal = frmPrincipal;
         }
 
         private void lblPrincipal_Click(object sender, EventArgs e)
@@ -115,20 +117,20 @@ namespace CpComputadoras2
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             esNuevo = true;
-            Size = new Size(961, 600);
+            Size = new Size(916, 600);
             txtCedulaIdentidad.Focus();
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            Size = new Size(961, 418);
+            Size = new Size(916, 418);
             listarCliente();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             esNuevo = false;
-            Size = new Size(961, 600);
+            Size = new Size(916, 600);
 
             int index = dgvListaClientes.CurrentCell.RowIndex;
             int id = Convert.ToInt32(dgvListaClientes.Rows[index].Cells["id"].Value);
@@ -223,6 +225,11 @@ namespace CpComputadoras2
             Size = new Size(961, 418);
             limpiarCliente();
 
+        }
+
+        private void FrmCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmPrincipal.Visible = true;
         }
     }
 }

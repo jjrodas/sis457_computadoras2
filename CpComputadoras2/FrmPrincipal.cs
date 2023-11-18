@@ -12,14 +12,16 @@ namespace CpComputadoras2
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        FrmAutenticacion frmAutenticacion;
+        public FrmPrincipal(FrmAutenticacion frmAutenticacion)
         {
             InitializeComponent();
+            this.frmAutenticacion = frmAutenticacion;
         }
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -29,17 +31,25 @@ namespace CpComputadoras2
 
         private void btnProdcutos_Click(object sender, EventArgs e)
         {
-            new FrmProducto().ShowDialog();
+            Visible = false;
+            new FrmProducto(this).ShowDialog();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            new FrmCliente().ShowDialog();
+            Visible = false;
+            new FrmCliente(this).ShowDialog();
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-            new FrmEmpleado().ShowDialog();
+            Visible = false;
+            new FrmEmpleado(this).ShowDialog();
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmAutenticacion.Visible = true;
         }
     }
 }

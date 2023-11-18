@@ -392,6 +392,7 @@
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Productos - Compumundo :::";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmProducto_FormClosing);
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             this.pnlAcciones.ResumeLayout(false);
             this.gbxLista.ResumeLayout(false);

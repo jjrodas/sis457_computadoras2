@@ -412,7 +412,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEmpleado";
+            this.Text = "::: Empleados - Compumundo :::";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEmpleado_FormClosing);
             this.Load += new System.EventHandler(this.FrmEmpleado_Load);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();

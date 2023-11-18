@@ -24,7 +24,8 @@ namespace CpComputadoras2
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            new FrmPrincipal().ShowDialog();
+            Visible = false;
+            new FrmPrincipal(this).ShowDialog();
         }
     }
 }
