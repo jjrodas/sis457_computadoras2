@@ -110,3 +110,6 @@ C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\
 C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmPrincipal.resources
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmEmpleado.resources
 C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmPrincipal.resources
+C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmEmpleado.resources
+C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmPrincipal.resources
+C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmAutenticacion.resources
