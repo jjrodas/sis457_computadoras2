@@ -107,3 +107,4 @@ C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\
 C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.exe
 C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.pdb
 C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmEmpleado.resources
+C:\Users\jota\Desktop\Proyecto_laboratorio\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmPrincipal.resources
