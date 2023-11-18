@@ -379,7 +379,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(900, 554);
             this.Controls.Add(this.gbxDatos);
             this.Controls.Add(this.pnlAcciones);
@@ -388,6 +388,7 @@
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.txtParametro);
             this.Controls.Add(this.lblPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: Productos - Compumundo :::";

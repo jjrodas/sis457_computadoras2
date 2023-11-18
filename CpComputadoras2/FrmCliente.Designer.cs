@@ -358,6 +358,7 @@
             this.Controls.Add(this.pnlAcciones);
             this.Controls.Add(this.gbxDatos);
             this.Controls.Add(this.lblPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCliente";

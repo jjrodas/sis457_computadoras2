@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.panBarraTitulo = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrarApp = new System.Windows.Forms.PictureBox();
             this.panMenuVertical = new System.Windows.Forms.Panel();
-            this.panContenedor = new System.Windows.Forms.Panel();
-            this.btnProdcutos = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEmpleados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnProdcutos = new System.Windows.Forms.Button();
+            this.panContenedor = new System.Windows.Forms.Panel();
             this.panBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).BeginInit();
@@ -58,6 +58,17 @@
             this.panBarraTitulo.Name = "panBarraTitulo";
             this.panBarraTitulo.Size = new System.Drawing.Size(916, 38);
             this.panBarraTitulo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(221, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "::: Principal - Compumundo :::";
             // 
             // btnMinimizar
             // 
@@ -85,7 +96,7 @@
             // 
             // panMenuVertical
             // 
-            this.panMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panMenuVertical.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panMenuVertical.Controls.Add(this.panel2);
             this.panMenuVertical.Controls.Add(this.panel3);
             this.panMenuVertical.Controls.Add(this.btnEmpleados);
@@ -98,42 +109,6 @@
             this.panMenuVertical.Size = new System.Drawing.Size(220, 555);
             this.panMenuVertical.TabIndex = 2;
             // 
-            // panContenedor
-            // 
-            this.panContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panContenedor.Location = new System.Drawing.Point(220, 38);
-            this.panContenedor.Name = "panContenedor";
-            this.panContenedor.Size = new System.Drawing.Size(696, 555);
-            this.panContenedor.TabIndex = 3;
-            // 
-            // btnProdcutos
-            // 
-            this.btnProdcutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnProdcutos.FlatAppearance.BorderSize = 0;
-            this.btnProdcutos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnProdcutos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnProdcutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdcutos.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProdcutos.ForeColor = System.Drawing.Color.White;
-            this.btnProdcutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdcutos.Image")));
-            this.btnProdcutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProdcutos.Location = new System.Drawing.Point(5, 99);
-            this.btnProdcutos.Name = "btnProdcutos";
-            this.btnProdcutos.Size = new System.Drawing.Size(214, 30);
-            this.btnProdcutos.TabIndex = 0;
-            this.btnProdcutos.Text = "Productos";
-            this.btnProdcutos.UseVisualStyleBackColor = false;
-            this.btnProdcutos.Click += new System.EventHandler(this.btnProdcutos_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Location = new System.Drawing.Point(0, 99);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 30);
-            this.panel1.TabIndex = 1;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -141,6 +116,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 30);
             this.panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(0, 135);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 30);
+            this.panel3.TabIndex = 5;
             // 
             // btnEmpleados
             // 
@@ -161,13 +144,13 @@
             this.btnEmpleados.UseVisualStyleBackColor = false;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel3.Location = new System.Drawing.Point(0, 135);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 30);
-            this.panel3.TabIndex = 5;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel1.Location = new System.Drawing.Point(0, 99);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 30);
+            this.panel1.TabIndex = 1;
             // 
             // btnClientes
             // 
@@ -188,16 +171,35 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
-            // label1
+            // btnProdcutos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "::: Principal - Compumundo :::";
+            this.btnProdcutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnProdcutos.FlatAppearance.BorderSize = 0;
+            this.btnProdcutos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnProdcutos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnProdcutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdcutos.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdcutos.ForeColor = System.Drawing.Color.White;
+            this.btnProdcutos.Image = ((System.Drawing.Image)(resources.GetObject("btnProdcutos.Image")));
+            this.btnProdcutos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProdcutos.Location = new System.Drawing.Point(5, 99);
+            this.btnProdcutos.Name = "btnProdcutos";
+            this.btnProdcutos.Size = new System.Drawing.Size(214, 30);
+            this.btnProdcutos.TabIndex = 0;
+            this.btnProdcutos.Text = "Productos";
+            this.btnProdcutos.UseVisualStyleBackColor = false;
+            this.btnProdcutos.Click += new System.EventHandler(this.btnProdcutos_Click);
+            // 
+            // panContenedor
+            // 
+            this.panContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panContenedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panContenedor.BackgroundImage")));
+            this.panContenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panContenedor.Location = new System.Drawing.Point(220, 38);
+            this.panContenedor.Name = "panContenedor";
+            this.panContenedor.Size = new System.Drawing.Size(696, 555);
+            this.panContenedor.TabIndex = 3;
             // 
             // FrmPrincipal
             // 

@@ -96,7 +96,7 @@
             this.gbxDatos.Size = new System.Drawing.Size(790, 188);
             this.gbxDatos.TabIndex = 47;
             this.gbxDatos.TabStop = false;
-            this.gbxDatos.Text = "Detalles del producto";
+            this.gbxDatos.Text = "Datos del empleado";
             // 
             // txtDireccion
             // 
@@ -309,7 +309,7 @@
             this.gbxLista.Size = new System.Drawing.Size(790, 196);
             this.gbxLista.TabIndex = 45;
             this.gbxLista.TabStop = false;
-            this.gbxLista.Text = "Lista de productos";
+            this.gbxLista.Text = "Lista de empleados";
             // 
             // dgvListaEmpleados
             // 
@@ -331,6 +331,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnBuscar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,7 +341,7 @@
             this.btnBuscar.TabIndex = 44;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblBusqueda
@@ -349,9 +350,9 @@
             this.lblBusqueda.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.Location = new System.Drawing.Point(55, 48);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(210, 19);
+            this.lblBusqueda.Size = new System.Drawing.Size(214, 19);
             this.lblBusqueda.TabIndex = 43;
-            this.lblBusqueda.Text = "Buscar por nombre del producto:";
+            this.lblBusqueda.Text = "Buscar por nombre del empleado:";
             // 
             // txtParametro
             // 
@@ -399,7 +400,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(900, 554);
             this.Controls.Add(this.gbxDatos);
             this.Controls.Add(this.pnlAcciones);
@@ -408,6 +409,7 @@
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.txtParametro);
             this.Controls.Add(this.lblPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmpleado";
