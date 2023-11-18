@@ -189,9 +189,9 @@
             this.lblBusqueda.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.Location = new System.Drawing.Point(55, 51);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(210, 19);
+            this.lblBusqueda.Size = new System.Drawing.Size(233, 19);
             this.lblBusqueda.TabIndex = 36;
-            this.lblBusqueda.Text = "Buscar por nombre del producto:";
+            this.lblBusqueda.Text = "Buscar por descripción del producto:";
             // 
             // txtParametro
             // 
