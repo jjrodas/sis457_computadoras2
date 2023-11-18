@@ -239,7 +239,9 @@
             this.cbxCategoria.Items.AddRange(new object[] {
             "Accesorios",
             "Periféricos",
-            "Laptops"});
+            "Laptops",
+            "Repuestos",
+            "Componentes"});
             this.cbxCategoria.Location = new System.Drawing.Point(596, 67);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(134, 27);
