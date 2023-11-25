@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("CpComputadoras2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Programa de control de ventas, tienda COMPUMUNDO")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CpComputadoras2")]
+[assembly: AssemblyCompany("Ruben y asociados.")]
+[assembly: AssemblyProduct("COMPUMUNDO APP")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
