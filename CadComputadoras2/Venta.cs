@@ -22,13 +22,11 @@ namespace CadComputadoras2
     
         public int id { get; set; }
         public int idUsuario { get; set; }
-        public int idCliente { get; set; }
         public System.DateTime fecha { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
     
-        public virtual Cliente Cliente { get; set; }
         public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VentaDetalle> VentaDetalle { get; set; }
