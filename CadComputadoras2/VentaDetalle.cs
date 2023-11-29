@@ -17,9 +17,9 @@ namespace CadComputadoras2
         public int id { get; set; }
         public int idProducto { get; set; }
         public int idVenta { get; set; }
+        public decimal precioUnitario { get; set; }
         public int cantidad { get; set; }
         public decimal total { get; set; }
-        public System.DateTime fechaVenta { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

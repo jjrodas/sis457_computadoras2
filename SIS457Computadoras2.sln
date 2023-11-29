@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClnComputadoras2", "ClnComp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpComputadoras2", "CpComputadoras2\CpComputadoras2.csproj", "{E7F49F96-FB90-4B61-8690-123F040F3918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCompumundo", "WebCompumundo\WebCompumundo.csproj", "{ED1A6DC7-7604-4E69-9CE8-636D2B6980AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebComputadoras2", "WebComputadoras2\WebComputadoras2.csproj", "{26A87441-299E-4B9E-AB4D-9497BDA41AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{E7F49F96-FB90-4B61-8690-123F040F3918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7F49F96-FB90-4B61-8690-123F040F3918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7F49F96-FB90-4B61-8690-123F040F3918}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED1A6DC7-7604-4E69-9CE8-636D2B6980AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED1A6DC7-7604-4E69-9CE8-636D2B6980AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED1A6DC7-7604-4E69-9CE8-636D2B6980AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED1A6DC7-7604-4E69-9CE8-636D2B6980AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A87441-299E-4B9E-AB4D-9497BDA41AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A87441-299E-4B9E-AB4D-9497BDA41AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A87441-299E-4B9E-AB4D-9497BDA41AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A87441-299E-4B9E-AB4D-9497BDA41AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

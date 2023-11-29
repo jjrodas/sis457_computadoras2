@@ -58,3 +58,15 @@ C:\Users\jota\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputa
 C:\Users\jota\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.CopyComplete
 C:\Users\jota\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.dll
 C:\Users\jota\Desktop\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.pdb
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\CadComputadoras2.dll.config
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\CadComputadoras2.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\CadComputadoras2.pdb
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.xml
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.AssemblyReference.cache
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.CoreCompileInputs.cache
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.csproj.CopyComplete
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CadComputadoras2\obj\Debug\CadComputadoras2.pdb

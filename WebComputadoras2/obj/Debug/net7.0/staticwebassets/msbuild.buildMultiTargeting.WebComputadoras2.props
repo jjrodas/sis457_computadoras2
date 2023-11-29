@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebComputadoras2.props" />
+</Project>

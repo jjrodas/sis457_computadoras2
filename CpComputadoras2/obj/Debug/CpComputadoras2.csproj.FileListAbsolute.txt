@@ -113,4 +113,28 @@ C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputad
 C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmEmpleado.resources
 C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmPrincipal.resources
 C:\Users\jota\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmAutenticacion.resources
-C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmAutenticacion.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\CpComputadoras2.exe.config
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\CpComputadoras2.exe
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\CpComputadoras2.pdb
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\CadComputadoras2.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\ClnComputadoras2.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\EntityFramework.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\CadComputadoras2.pdb
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\CadComputadoras2.dll.config
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\ClnComputadoras2.pdb
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\ClnComputadoras2.dll.config
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\EntityFramework.xml
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.AssemblyReference.cache
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmAutenticacion.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmCliente.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmEmpleado.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmPrincipal.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmProducto.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.Properties.Resources.resources
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.GenerateResource.cache
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.CoreCompileInputs.cache
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.CopyComplete
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.exe
+C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.pdb
