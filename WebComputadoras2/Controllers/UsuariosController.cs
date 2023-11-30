@@ -9,90 +9,90 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class CompraController : Controller
+    public class UsuariosController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public CompraController(FinalComputadoras2Context context)
+        public UsuariosController(FinalComputadoras2Context context)
         {
             _context = context;
         }
 
-        // GET: Compra
+        // GET: Usuario
         public async Task<IActionResult> Index()
         {
-            var finalComputadoras2Context = _context.Compras.Include(c => c.IdProveedorNavigation);
+            var finalComputadoras2Context = _context.Usuarios.Include(u => u.IdRolNavigation);
             return View(await finalComputadoras2Context.ToListAsync());
         }
 
-        // GET: Compra/Details/5
+        // GET: Usuario/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Compras == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var compra = await _context.Compras
-                .Include(c => c.IdProveedorNavigation)
+            var usuario = await _context.Usuarios
+                .Include(u => u.IdRolNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (compra == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(compra);
+            return View(usuario);
         }
 
-        // GET: Compra/Create
+        // GET: Usuario/Create
         public IActionResult Create()
         {
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id");
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id");
             return View();
         }
 
-        // POST: Compra/Create
+        // POST: Usuario/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdProveedor,Transaccion,Fecha,UsuarioRegistro,FechaRegistro,Estado")] Compra compra)
+        public async Task<IActionResult> Create([Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(compra);
+                _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id", compra.IdProveedor);
-            return View(compra);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            return View(usuario);
         }
 
-        // GET: Compra/Edit/5
+        // GET: Usuario/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Compras == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var compra = await _context.Compras.FindAsync(id);
-            if (compra == null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id", compra.IdProveedor);
-            return View(compra);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            return View(usuario);
         }
 
-        // POST: Compra/Edit/5
+        // POST: Usuario/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdProveedor,Transaccion,Fecha,UsuarioRegistro,FechaRegistro,Estado")] Compra compra)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
         {
-            if (id != compra.Id)
+            if (id != usuario.Id)
             {
                 return NotFound();
             }
@@ -101,12 +101,12 @@ namespace WebComputadoras2.Controllers
             {
                 try
                 {
-                    _context.Update(compra);
+                    _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CompraExists(compra.Id))
+                    if (!UsuarioExists(usuario.Id))
                     {
                         return NotFound();
                     }
@@ -117,51 +117,51 @@ namespace WebComputadoras2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id", compra.IdProveedor);
-            return View(compra);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            return View(usuario);
         }
 
-        // GET: Compra/Delete/5
+        // GET: Usuario/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Compras == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var compra = await _context.Compras
-                .Include(c => c.IdProveedorNavigation)
+            var usuario = await _context.Usuarios
+                .Include(u => u.IdRolNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (compra == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(compra);
+            return View(usuario);
         }
 
-        // POST: Compra/Delete/5
+        // POST: Usuario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Compras == null)
+            if (_context.Usuarios == null)
             {
-                return Problem("Entity set 'FinalComputadoras2Context.Compras'  is null.");
+                return Problem("Entity set 'FinalComputadoras2Context.Usuarios'  is null.");
             }
-            var compra = await _context.Compras.FindAsync(id);
-            if (compra != null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario != null)
             {
-                _context.Compras.Remove(compra);
+                _context.Usuarios.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CompraExists(int id)
+        private bool UsuarioExists(int id)
         {
-          return (_context.Compras?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

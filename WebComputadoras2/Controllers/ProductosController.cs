@@ -9,11 +9,11 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class ProductoController : Controller
+    public class ProductosController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public ProductoController(FinalComputadoras2Context context)
+        public ProductosController(FinalComputadoras2Context context)
         {
             _context = context;
         }
@@ -22,7 +22,7 @@ namespace WebComputadoras2.Controllers
         public async Task<IActionResult> Index()
         {
             var finalComputadoras2Context = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation);
-            return View(await finalComputadoras2Context.ToListAsync());
+            return View(await finalComputadoras2Context.Where(x => x.Estado != -1).ToListAsync());
         }
 
         // GET: Producto/Details/5
@@ -48,8 +48,8 @@ namespace WebComputadoras2.Controllers
         // GET: Producto/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id");
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Id");
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Nombre");
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Nombre");
             return View();
         }
 
@@ -58,10 +58,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
+        public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(producto.Descripcion) && !decimal.IsNegative(producto.PrecioVenta) && !int.IsNegative(producto.Stock))
             {
+                producto.UsuarioRegistro = "SIS457";
+                producto.FechaRegistro = DateTime.Now;
+                producto.Estado = 1;
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -101,7 +104,7 @@ namespace WebComputadoras2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(producto.Descripcion) && !decimal.IsNegative(producto.PrecioVenta) && !int.IsNegative(producto.Stock))
             {
                 try
                 {
@@ -158,7 +161,8 @@ namespace WebComputadoras2.Controllers
             var producto = await _context.Productos.FindAsync(id);
             if (producto != null)
             {
-                _context.Productos.Remove(producto);
+                producto.Estado = -1;
+                //_context.Productos.Remove(producto);
             }
             
             await _context.SaveChangesAsync();

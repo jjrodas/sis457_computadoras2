@@ -9,11 +9,11 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class ProveedorController : Controller
+    public class ProveedoresController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public ProveedorController(FinalComputadoras2Context context)
+        public ProveedoresController(FinalComputadoras2Context context)
         {
             _context = context;
         }

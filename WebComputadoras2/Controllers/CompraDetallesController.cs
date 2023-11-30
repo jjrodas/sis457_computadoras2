@@ -9,11 +9,11 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class CompraDetalleController : Controller
+    public class CompraDetallesController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public CompraDetalleController(FinalComputadoras2Context context)
+        public CompraDetallesController(FinalComputadoras2Context context)
         {
             _context = context;
         }

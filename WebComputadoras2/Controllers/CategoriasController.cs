@@ -9,104 +9,104 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class UsuarioController : Controller
+    public class CategoriasController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public UsuarioController(FinalComputadoras2Context context)
+        public CategoriasController(FinalComputadoras2Context context)
         {
             _context = context;
         }
 
-        // GET: Usuario
+        // GET: Categoria
         public async Task<IActionResult> Index()
         {
-            var finalComputadoras2Context = _context.Usuarios.Include(u => u.IdRolNavigation);
-            return View(await finalComputadoras2Context.ToListAsync());
+              return _context.Categoria != null ? 
+                          View(await _context.Categoria.Where(x => x.Estado != -1).ToListAsync()) :
+                          Problem("Entity set 'FinalComputadoras2Context.Categoria'  is null.");
         }
 
-        // GET: Usuario/Details/5
+        // GET: Categoria/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Categoria == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
-                .Include(u => u.IdRolNavigation)
+            var categorium = await _context.Categoria
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (usuario == null)
+            if (categorium == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            return View(categorium);
         }
 
-        // GET: Usuario/Create
+        // GET: Categoria/Create
         public IActionResult Create()
         {
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id");
             return View();
         }
 
-        // POST: Usuario/Create
+        // POST: Categoria/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion")] Categorium categorium)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(categorium.Nombre) || string.IsNullOrEmpty(categorium.Descripcion))
             {
-                _context.Add(usuario);
+                categorium.UsuarioRegistro = "SIS457";
+                categorium.FechaRegistro = DateTime.Now;
+                categorium.Estado = 1;
+                _context.Add(categorium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
-            return View(usuario);
+            return View(categorium);
         }
 
-        // GET: Usuario/Edit/5
+        // GET: Categoria/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Categoria == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios.FindAsync(id);
-            if (usuario == null)
+            var categorium = await _context.Categoria.FindAsync(id);
+            if (categorium == null)
             {
                 return NotFound();
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
-            return View(usuario);
+            return View(categorium);
         }
 
-        // POST: Usuario/Edit/5
+        // POST: Categoria/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion,UsuarioRegistro,FechaRegistro,Estado")] Categorium categorium)
         {
-            if (id != usuario.Id)
+            if (id != categorium.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(categorium.Nombre) || string.IsNullOrEmpty(categorium.Descripcion))
             {
                 try
                 {
-                    _context.Update(usuario);
+                    _context.Update(categorium);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.Id))
+                    if (!CategoriumExists(categorium.Id))
                     {
                         return NotFound();
                     }
@@ -117,51 +117,50 @@ namespace WebComputadoras2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
-            return View(usuario);
+            return View(categorium);
         }
 
-        // GET: Usuario/Delete/5
+        // GET: Categoria/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Usuarios == null)
+            if (id == null || _context.Categoria == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
-                .Include(u => u.IdRolNavigation)
+            var categorium = await _context.Categoria
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (usuario == null)
+            if (categorium == null)
             {
                 return NotFound();
             }
 
-            return View(usuario);
+            return View(categorium);
         }
 
-        // POST: Usuario/Delete/5
+        // POST: Categoria/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Usuarios == null)
+            if (_context.Categoria == null)
             {
-                return Problem("Entity set 'FinalComputadoras2Context.Usuarios'  is null.");
+                return Problem("Entity set 'FinalComputadoras2Context.Categoria'  is null.");
             }
-            var usuario = await _context.Usuarios.FindAsync(id);
-            if (usuario != null)
+            var categorium = await _context.Categoria.FindAsync(id);
+            if (categorium != null)
             {
-                _context.Usuarios.Remove(usuario);
+                categorium.Estado = -1;
+                //_context.Categoria.Remove(categorium);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UsuarioExists(int id)
+        private bool CategoriumExists(int id)
         {
-          return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Categoria?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

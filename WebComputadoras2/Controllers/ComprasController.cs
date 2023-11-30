@@ -9,87 +9,90 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class RolController : Controller
+    public class ComprasController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public RolController(FinalComputadoras2Context context)
+        public ComprasController(FinalComputadoras2Context context)
         {
             _context = context;
         }
 
-        // GET: Rol
+        // GET: Compra
         public async Task<IActionResult> Index()
         {
-              return _context.Rols != null ? 
-                          View(await _context.Rols.ToListAsync()) :
-                          Problem("Entity set 'FinalComputadoras2Context.Rols'  is null.");
+            var finalComputadoras2Context = _context.Compras.Include(c => c.IdProveedorNavigation);
+            return View(await finalComputadoras2Context.ToListAsync());
         }
 
-        // GET: Rol/Details/5
+        // GET: Compra/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Rols == null)
+            if (id == null || _context.Compras == null)
             {
                 return NotFound();
             }
 
-            var rol = await _context.Rols
+            var compra = await _context.Compras
+                .Include(c => c.IdProveedorNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (rol == null)
+            if (compra == null)
             {
                 return NotFound();
             }
 
-            return View(rol);
+            return View(compra);
         }
 
-        // GET: Rol/Create
+        // GET: Compra/Create
         public IActionResult Create()
         {
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id");
             return View();
         }
 
-        // POST: Rol/Create
+        // POST: Compra/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Rol rol)
+        public async Task<IActionResult> Create([Bind("Id,IdProveedor,Transaccion,Fecha,UsuarioRegistro,FechaRegistro,Estado")] Compra compra)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(rol);
+                _context.Add(compra);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(rol);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id", compra.IdProveedor);
+            return View(compra);
         }
 
-        // GET: Rol/Edit/5
+        // GET: Compra/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Rols == null)
+            if (id == null || _context.Compras == null)
             {
                 return NotFound();
             }
 
-            var rol = await _context.Rols.FindAsync(id);
-            if (rol == null)
+            var compra = await _context.Compras.FindAsync(id);
+            if (compra == null)
             {
                 return NotFound();
             }
-            return View(rol);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id", compra.IdProveedor);
+            return View(compra);
         }
 
-        // POST: Rol/Edit/5
+        // POST: Compra/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Rol rol)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdProveedor,Transaccion,Fecha,UsuarioRegistro,FechaRegistro,Estado")] Compra compra)
         {
-            if (id != rol.Id)
+            if (id != compra.Id)
             {
                 return NotFound();
             }
@@ -98,12 +101,12 @@ namespace WebComputadoras2.Controllers
             {
                 try
                 {
-                    _context.Update(rol);
+                    _context.Update(compra);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RolExists(rol.Id))
+                    if (!CompraExists(compra.Id))
                     {
                         return NotFound();
                     }
@@ -114,49 +117,51 @@ namespace WebComputadoras2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(rol);
+            ViewData["IdProveedor"] = new SelectList(_context.Proveedors, "Id", "Id", compra.IdProveedor);
+            return View(compra);
         }
 
-        // GET: Rol/Delete/5
+        // GET: Compra/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Rols == null)
+            if (id == null || _context.Compras == null)
             {
                 return NotFound();
             }
 
-            var rol = await _context.Rols
+            var compra = await _context.Compras
+                .Include(c => c.IdProveedorNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (rol == null)
+            if (compra == null)
             {
                 return NotFound();
             }
 
-            return View(rol);
+            return View(compra);
         }
 
-        // POST: Rol/Delete/5
+        // POST: Compra/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Rols == null)
+            if (_context.Compras == null)
             {
-                return Problem("Entity set 'FinalComputadoras2Context.Rols'  is null.");
+                return Problem("Entity set 'FinalComputadoras2Context.Compras'  is null.");
             }
-            var rol = await _context.Rols.FindAsync(id);
-            if (rol != null)
+            var compra = await _context.Compras.FindAsync(id);
+            if (compra != null)
             {
-                _context.Rols.Remove(rol);
+                _context.Compras.Remove(compra);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RolExists(int id)
+        private bool CompraExists(int id)
         {
-          return (_context.Rols?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Compras?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
