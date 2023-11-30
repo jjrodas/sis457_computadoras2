@@ -22,7 +22,7 @@ namespace WebComputadoras2.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Proveedors != null ? 
-                          View(await _context.Proveedors.ToListAsync()) :
+                          View(await _context.Proveedors.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'FinalComputadoras2Context.Proveedors'  is null.");
         }
 
@@ -55,10 +55,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nit,RazonSocial,Direccion,Telefono,Representante,UsuarioRegistro,FechaRegistro,Estado")] Proveedor proveedor)
+        public async Task<IActionResult> Create([Bind("Id,Nit,RazonSocial,Direccion,Telefono,Representante")] Proveedor proveedor)
         {
             if (ModelState.IsValid)
             {
+                proveedor.UsuarioRegistro = "Sis-457";
+                proveedor.FechaRegistro = DateTime.Now;
+                proveedor.Estado = 1;
                 _context.Add(proveedor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -147,7 +150,8 @@ namespace WebComputadoras2.Controllers
             var proveedor = await _context.Proveedors.FindAsync(id);
             if (proveedor != null)
             {
-                _context.Proveedors.Remove(proveedor);
+                proveedor.Estado = -1;
+                //_context.Proveedors.Remove(proveedor);
             }
             
             await _context.SaveChangesAsync();

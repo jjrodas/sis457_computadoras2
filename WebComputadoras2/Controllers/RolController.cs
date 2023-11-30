@@ -22,7 +22,7 @@ namespace WebComputadoras2.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Rols != null ? 
-                          View(await _context.Rols.ToListAsync()) :
+                          View(await _context.Rols.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'FinalComputadoras2Context.Rols'  is null.");
         }
 
@@ -55,10 +55,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Rol rol)
+        public async Task<IActionResult> Create([Bind("Id,Nombre")] Rol rol)
         {
             if (ModelState.IsValid)
             {
+                rol.UsuarioRegistro = "Sis-457";
+                rol.FechaRegistro = DateTime.Now;
+                rol.Estado = 1;
                 _context.Add(rol);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -147,7 +150,8 @@ namespace WebComputadoras2.Controllers
             var rol = await _context.Rols.FindAsync(id);
             if (rol != null)
             {
-                _context.Rols.Remove(rol);
+                rol.Estado = -1;
+                //_context.Rols.Remove(rol);
             }
             
             await _context.SaveChangesAsync();

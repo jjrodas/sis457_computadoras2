@@ -21,7 +21,7 @@ namespace WebComputadoras2.Controllers
         // GET: Usuario
         public async Task<IActionResult> Index()
         {
-            var finalComputadoras2Context = _context.Usuarios.Include(u => u.IdRolNavigation);
+            var finalComputadoras2Context = _context.Usuarios.Where(x => x.Estado != -1).Include(u => u.IdRolNavigation);
             return View(await finalComputadoras2Context.ToListAsync());
         }
 
@@ -56,10 +56,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
+                usuario.UsuarioRegistro = "Sis-457";
+                usuario.FechaRegistro = DateTime.Now;
+                usuario.Estado = 1;
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -152,7 +155,8 @@ namespace WebComputadoras2.Controllers
             var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario != null)
             {
-                _context.Usuarios.Remove(usuario);
+                usuario.Estado = -1;
+                //_context.Usuarios.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();

@@ -5,75 +5,75 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+<h1>Eliminar Usuario</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Esta usted seguro de eliminar al usuario?</h3>
 <div>
-    <h4>Usuario</h4>
+
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombres)
+        Nombres
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Nombres)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Apellidos)
+         Apellidos
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Apellidos)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+         Email
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario1)
+         Usuario 1
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Usuario1)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Clave)
+         Clave
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Clave)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefono)
+        Telefono
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
+         Fecha Nacimiento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaNacimiento)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UsuarioRegistro)
+         Usuario Registro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaRegistro)
+         Fecha Registro
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaRegistro)
+            @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Estado)
+         Estado
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Estado)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdRolNavigation)
+         Id Rol
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IdRolNavigation.Id)
@@ -82,7 +82,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver atras</a>
     </form>
 </div>

@@ -21,7 +21,7 @@ namespace WebComputadoras2.Controllers
         // GET: Producto
         public async Task<IActionResult> Index()
         {
-            var finalComputadoras2Context = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation);
+            var finalComputadoras2Context = _context.Productos.Where(x => x.Estado != -1).Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation);
             return View(await finalComputadoras2Context.ToListAsync());
         }
 
@@ -58,10 +58,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
+        public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
             if (ModelState.IsValid)
             {
+                producto.UsuarioRegistro = "Sis-457";
+                producto.FechaRegistro = DateTime.Now;
+                producto.Estado = 1;
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -158,7 +161,8 @@ namespace WebComputadoras2.Controllers
             var producto = await _context.Productos.FindAsync(id);
             if (producto != null)
             {
-                _context.Productos.Remove(producto);
+                producto.Estado = -1;
+                //_context.Productos.Remove(producto);
             }
             
             await _context.SaveChangesAsync();

@@ -21,7 +21,7 @@ namespace WebComputadoras2.Controllers
         // GET: Compra
         public async Task<IActionResult> Index()
         {
-            var finalComputadoras2Context = _context.Compras.Include(c => c.IdProveedorNavigation);
+            var finalComputadoras2Context = _context.Compras.Where(x => x.Estado != -1).Include(c => c.IdProveedorNavigation);
             return View(await finalComputadoras2Context.ToListAsync());
         }
 
@@ -56,10 +56,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdProveedor,Transaccion,Fecha,UsuarioRegistro,FechaRegistro,Estado")] Compra compra)
+        public async Task<IActionResult> Create([Bind("Id,IdProveedor,Transaccion,Fecha")] Compra compra)
         {
             if (ModelState.IsValid)
             {
+                compra.UsuarioRegistro = "Sis-457";
+                compra.FechaRegistro = DateTime.Now;
+                compra.Estado = 1;
                 _context.Add(compra);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -152,6 +155,7 @@ namespace WebComputadoras2.Controllers
             var compra = await _context.Compras.FindAsync(id);
             if (compra != null)
             {
+                compra.Estado = -1;
                 _context.Compras.Remove(compra);
             }
             

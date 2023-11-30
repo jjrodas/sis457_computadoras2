@@ -58,10 +58,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdCompra,IdProducto,Cantidad,PrecioUnitario,Total,UsuarioRegistro,FechaRegistro,Estado")] CompraDetalle compraDetalle)
+        public async Task<IActionResult> Create([Bind("Id,IdCompra,IdProducto,Cantidad,PrecioUnitario,Total")] CompraDetalle compraDetalle)
         {
             if (ModelState.IsValid)
             {
+                compraDetalle.UsuarioRegistro = "Sis-457";
+                compraDetalle.FechaRegistro = DateTime.Now;
+                compraDetalle.Estado = 1;
                 _context.Add(compraDetalle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -158,6 +161,7 @@ namespace WebComputadoras2.Controllers
             var compraDetalle = await _context.CompraDetalles.FindAsync(id);
             if (compraDetalle != null)
             {
+                compraDetalle.Estado = -1;
                 _context.CompraDetalles.Remove(compraDetalle);
             }
             

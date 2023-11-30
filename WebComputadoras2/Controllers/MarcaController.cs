@@ -22,7 +22,7 @@ namespace WebComputadoras2.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Marcas != null ? 
-                          View(await _context.Marcas.ToListAsync()) :
+                          View(await _context.Marcas.Where(x => x.Estado != -1).ToListAsync()) :
                           Problem("Entity set 'FinalComputadoras2Context.Marcas'  is null.");
         }
 
@@ -55,10 +55,13 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Marca marca)
+        public async Task<IActionResult> Create([Bind("Id,Nombre")] Marca marca)
         {
             if (ModelState.IsValid)
             {
+                marca.UsuarioRegistro = "Sis-457";
+                marca.FechaRegistro = DateTime.Now;
+                marca.Estado = 1;
                 _context.Add(marca);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -147,7 +150,8 @@ namespace WebComputadoras2.Controllers
             var marca = await _context.Marcas.FindAsync(id);
             if (marca != null)
             {
-                _context.Marcas.Remove(marca);
+                marca.Estado = -1;
+                //_context.Marcas.Remove(marca);
             }
             
             await _context.SaveChangesAsync();
