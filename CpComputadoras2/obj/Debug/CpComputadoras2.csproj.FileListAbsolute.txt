@@ -138,3 +138,4 @@ C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\C
 C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.csproj.CopyComplete
 C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.exe
 C:\Users\jota\Desktop\Proyecto final SIS457\Nueva carpeta\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.pdb
+C:\Users\Ruben\Desktop\sis457_computadoras2\CpComputadoras2\obj\Debug\CpComputadoras2.FrmAutenticacion.resources
