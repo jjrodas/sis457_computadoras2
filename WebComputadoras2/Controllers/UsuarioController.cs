@@ -58,7 +58,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(usuario.Nombres))
             {
                 usuario.UsuarioRegistro = "Sis-457";
                 usuario.FechaRegistro = DateTime.Now;

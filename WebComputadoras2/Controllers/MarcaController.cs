@@ -57,7 +57,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nombre")] Marca marca)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(marca.Nombre))
             {
                 marca.UsuarioRegistro = "Sis-457";
                 marca.FechaRegistro = DateTime.Now;

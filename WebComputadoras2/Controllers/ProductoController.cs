@@ -60,7 +60,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(producto.Descripcion))
             {
                 producto.UsuarioRegistro = "Sis-457";
                 producto.FechaRegistro = DateTime.Now;

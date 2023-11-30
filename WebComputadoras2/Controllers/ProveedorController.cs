@@ -57,7 +57,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nit,RazonSocial,Direccion,Telefono,Representante")] Proveedor proveedor)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(proveedor.RazonSocial))
             {
                 proveedor.UsuarioRegistro = "Sis-457";
                 proveedor.FechaRegistro = DateTime.Now;

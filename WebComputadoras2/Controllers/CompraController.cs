@@ -58,7 +58,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdProveedor,Transaccion,Fecha")] Compra compra)
         {
-            if (ModelState.IsValid)
+            if (compra.Transaccion!=0)
             {
                 compra.UsuarioRegistro = "Sis-457";
                 compra.FechaRegistro = DateTime.Now;
