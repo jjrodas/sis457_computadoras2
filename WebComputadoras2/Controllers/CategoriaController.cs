@@ -9,104 +9,101 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class MarcasController : Controller
+    public class CategoriaController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public MarcasController(FinalComputadoras2Context context)
+        public CategoriaController(FinalComputadoras2Context context)
         {
             _context = context;
         }
 
-        // GET: Marca
+        // GET: Categoria
         public async Task<IActionResult> Index()
         {
-              return _context.Marcas != null ? 
-                          View(await _context.Marcas.Where(x => x.Estado != -1).ToListAsync()) :
-                          Problem("Entity set 'FinalComputadoras2Context.Marcas'  is null.");
+              return _context.Categoria != null ? 
+                          View(await _context.Categoria.ToListAsync()) :
+                          Problem("Entity set 'FinalComputadoras2Context.Categoria'  is null.");
         }
 
-        // GET: Marca/Details/5
+        // GET: Categoria/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Marcas == null)
+            if (id == null || _context.Categoria == null)
             {
                 return NotFound();
             }
 
-            var marca = await _context.Marcas
+            var categorium = await _context.Categoria
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (marca == null)
+            if (categorium == null)
             {
                 return NotFound();
             }
 
-            return View(marca);
+            return View(categorium);
         }
 
-        // GET: Marca/Create
+        // GET: Categoria/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Marca/Create
+        // POST: Categoria/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre")] Marca marca)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion,UsuarioRegistro,FechaRegistro,Estado")] Categorium categorium)
         {
-            if (!string.IsNullOrEmpty(marca.Nombre))
+            if (ModelState.IsValid)
             {
-                marca.UsuarioRegistro = "SIS457";
-                marca.FechaRegistro = DateTime.Now;
-                marca.Estado = 1;
-                _context.Add(marca);
+                _context.Add(categorium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(marca);
+            return View(categorium);
         }
 
-        // GET: Marca/Edit/5
+        // GET: Categoria/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Marcas == null)
+            if (id == null || _context.Categoria == null)
             {
                 return NotFound();
             }
 
-            var marca = await _context.Marcas.FindAsync(id);
-            if (marca == null)
+            var categorium = await _context.Categoria.FindAsync(id);
+            if (categorium == null)
             {
                 return NotFound();
             }
-            return View(marca);
+            return View(categorium);
         }
 
-        // POST: Marca/Edit/5
+        // POST: Categoria/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Marca marca)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion,UsuarioRegistro,FechaRegistro,Estado")] Categorium categorium)
         {
-            if (id != marca.Id)
+            if (id != categorium.Id)
             {
                 return NotFound();
             }
 
-            if (!string.IsNullOrEmpty(marca.Nombre))
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(marca);
+                    _context.Update(categorium);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MarcaExists(marca.Id))
+                    if (!CategoriumExists(categorium.Id))
                     {
                         return NotFound();
                     }
@@ -117,50 +114,49 @@ namespace WebComputadoras2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(marca);
+            return View(categorium);
         }
 
-        // GET: Marca/Delete/5
+        // GET: Categoria/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Marcas == null)
+            if (id == null || _context.Categoria == null)
             {
                 return NotFound();
             }
 
-            var marca = await _context.Marcas
+            var categorium = await _context.Categoria
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (marca == null)
+            if (categorium == null)
             {
                 return NotFound();
             }
 
-            return View(marca);
+            return View(categorium);
         }
 
-        // POST: Marca/Delete/5
+        // POST: Categoria/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Marcas == null)
+            if (_context.Categoria == null)
             {
-                return Problem("Entity set 'FinalComputadoras2Context.Marcas'  is null.");
+                return Problem("Entity set 'FinalComputadoras2Context.Categoria'  is null.");
             }
-            var marca = await _context.Marcas.FindAsync(id);
-            if (marca != null)
+            var categorium = await _context.Categoria.FindAsync(id);
+            if (categorium != null)
             {
-                marca.Estado = -1;
-                //_context.Marcas.Remove(marca);
+                _context.Categoria.Remove(categorium);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MarcaExists(int id)
+        private bool CategoriumExists(int id)
         {
-          return (_context.Marcas?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Categoria?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

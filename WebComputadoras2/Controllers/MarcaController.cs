@@ -9,87 +9,87 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    public class RolesController : Controller
+    public class MarcaController : Controller
     {
         private readonly FinalComputadoras2Context _context;
 
-        public RolesController(FinalComputadoras2Context context)
+        public MarcaController(FinalComputadoras2Context context)
         {
             _context = context;
         }
 
-        // GET: Rol
+        // GET: Marca
         public async Task<IActionResult> Index()
         {
-              return _context.Rols != null ? 
-                          View(await _context.Rols.ToListAsync()) :
-                          Problem("Entity set 'FinalComputadoras2Context.Rols'  is null.");
+              return _context.Marcas != null ? 
+                          View(await _context.Marcas.ToListAsync()) :
+                          Problem("Entity set 'FinalComputadoras2Context.Marcas'  is null.");
         }
 
-        // GET: Rol/Details/5
+        // GET: Marca/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Rols == null)
+            if (id == null || _context.Marcas == null)
             {
                 return NotFound();
             }
 
-            var rol = await _context.Rols
+            var marca = await _context.Marcas
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (rol == null)
+            if (marca == null)
             {
                 return NotFound();
             }
 
-            return View(rol);
+            return View(marca);
         }
 
-        // GET: Rol/Create
+        // GET: Marca/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Rol/Create
+        // POST: Marca/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Rol rol)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Marca marca)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(rol);
+                _context.Add(marca);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(rol);
+            return View(marca);
         }
 
-        // GET: Rol/Edit/5
+        // GET: Marca/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Rols == null)
+            if (id == null || _context.Marcas == null)
             {
                 return NotFound();
             }
 
-            var rol = await _context.Rols.FindAsync(id);
-            if (rol == null)
+            var marca = await _context.Marcas.FindAsync(id);
+            if (marca == null)
             {
                 return NotFound();
             }
-            return View(rol);
+            return View(marca);
         }
 
-        // POST: Rol/Edit/5
+        // POST: Marca/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Rol rol)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,UsuarioRegistro,FechaRegistro,Estado")] Marca marca)
         {
-            if (id != rol.Id)
+            if (id != marca.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace WebComputadoras2.Controllers
             {
                 try
                 {
-                    _context.Update(rol);
+                    _context.Update(marca);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RolExists(rol.Id))
+                    if (!MarcaExists(marca.Id))
                     {
                         return NotFound();
                     }
@@ -114,49 +114,49 @@ namespace WebComputadoras2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(rol);
+            return View(marca);
         }
 
-        // GET: Rol/Delete/5
+        // GET: Marca/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Rols == null)
+            if (id == null || _context.Marcas == null)
             {
                 return NotFound();
             }
 
-            var rol = await _context.Rols
+            var marca = await _context.Marcas
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (rol == null)
+            if (marca == null)
             {
                 return NotFound();
             }
 
-            return View(rol);
+            return View(marca);
         }
 
-        // POST: Rol/Delete/5
+        // POST: Marca/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Rols == null)
+            if (_context.Marcas == null)
             {
-                return Problem("Entity set 'FinalComputadoras2Context.Rols'  is null.");
+                return Problem("Entity set 'FinalComputadoras2Context.Marcas'  is null.");
             }
-            var rol = await _context.Rols.FindAsync(id);
-            if (rol != null)
+            var marca = await _context.Marcas.FindAsync(id);
+            if (marca != null)
             {
-                _context.Rols.Remove(rol);
+                _context.Marcas.Remove(marca);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RolExists(int id)
+        private bool MarcaExists(int id)
         {
-          return (_context.Rols?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Marcas?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
