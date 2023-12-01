@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>USUARIO</h1>
+<h1>Usuarios</h1>
 
 <p>
     <a asp-action="Create">Crear Nuevo</a>
@@ -29,22 +29,22 @@
              Clave
             </th>
             <th>
-             Telefono
+             Teléfono
             </th>
             <th>
-            Fecha Nacimiento
+            Fecha de Nacimiento
             </th>
             <th>
             Usuario Registro
             </th>
             <th>
-            Fecha Registro
+            Fecha de Registro
             </th>
             <th>
             Estado
             </th>
             <th>
-            IdRol
+            Rol
             </th>
             <th></th>
         </tr>
@@ -83,7 +83,7 @@
                 @(item.Estado == 1 ? "Activo" : "Inactivo")
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdRolNavigation.Id)
+                @item.IdRolNavigation.Nombre
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |

@@ -43,13 +43,13 @@
             @Html.DisplayFor(model => model.Clave)
         </dd>
         <dt class = "col-sm-2">
-        Telefono
+        Teléfono
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefono)
         </dd>
         <dt class = "col-sm-2">
-         Fecha Nacimiento
+         Fecha de Nacimiento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaNacimiento)
@@ -61,7 +61,7 @@
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-         Fecha Registro
+         Fecha de Registro
         </dt>
         <dd class = "col-sm-10">
             @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
@@ -70,13 +70,13 @@
          Estado
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+            @(Model.Estado == 1 ? "Activo" : "Inactivo")
         </dd>
         <dt class = "col-sm-2">
-         Id Rol
+         Rol
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdRolNavigation.Id)
+            @Model.IdRolNavigation.Nombre
         </dd>
     </dl>
     

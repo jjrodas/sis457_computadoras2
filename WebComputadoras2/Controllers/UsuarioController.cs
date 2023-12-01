@@ -47,7 +47,7 @@ namespace WebComputadoras2.Controllers
         // GET: Usuario/Create
         public IActionResult Create()
         {
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id");
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Nombre");
             return View();
         }
 
@@ -58,7 +58,8 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento")] Usuario usuario)
         {
-            if (!string.IsNullOrEmpty(usuario.Nombres))
+            if (!string.IsNullOrEmpty(usuario.Nombres) && !string.IsNullOrEmpty(usuario.Apellidos) && !string.IsNullOrEmpty(usuario.Email)
+                && !string.IsNullOrEmpty(usuario.Usuario1) && !string.IsNullOrEmpty(usuario.Clave))
             {
                 usuario.UsuarioRegistro = "Sis-457";
                 usuario.FechaRegistro = DateTime.Now;
@@ -84,7 +85,7 @@ namespace WebComputadoras2.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", usuario.IdRol);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Nombre", usuario.IdRol);
             return View(usuario);
         }
 
@@ -100,7 +101,8 @@ namespace WebComputadoras2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(usuario.Nombres) && !string.IsNullOrEmpty(usuario.Apellidos) && !string.IsNullOrEmpty(usuario.Email)
+                && !string.IsNullOrEmpty(usuario.Usuario1) && !string.IsNullOrEmpty(usuario.Clave))
             {
                 try
                 {
