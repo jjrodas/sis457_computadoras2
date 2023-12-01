@@ -97,7 +97,7 @@ namespace WebComputadoras2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(marca.Nombre))
             {
                 try
                 {

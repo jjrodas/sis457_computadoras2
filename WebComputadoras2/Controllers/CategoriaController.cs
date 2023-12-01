@@ -57,7 +57,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion")] Categorium categorium)
         {
-            if (!string.IsNullOrEmpty(categorium.Nombre))
+            if (!string.IsNullOrEmpty(categorium.Nombre) && !string.IsNullOrEmpty(categorium.Descripcion))
             {
                 categorium.UsuarioRegistro = "Sis-457";
                 categorium.FechaRegistro = DateTime.Now;
@@ -97,7 +97,7 @@ namespace WebComputadoras2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(categorium.Nombre) && !string.IsNullOrEmpty(categorium.Descripcion))
             {
                 try
                 {
