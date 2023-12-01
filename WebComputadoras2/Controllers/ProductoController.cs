@@ -48,8 +48,8 @@ namespace WebComputadoras2.Controllers
         // GET: Producto/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id");
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Id");
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Nombre");
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Nombre");
             return View();
         }
 
@@ -60,7 +60,8 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
-            if (!string.IsNullOrEmpty(producto.Descripcion))
+            if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !decimal.IsNegative(producto.PrecioVenta)
+                && int.IsNegative(producto.Stock))
             {
                 producto.UsuarioRegistro = "Sis-457";
                 producto.FechaRegistro = DateTime.Now;
@@ -87,8 +88,8 @@ namespace WebComputadoras2.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", producto.IdCategoria);
-            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Id", producto.IdMarca);
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Nombre", producto.IdCategoria);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Nombre", producto.IdMarca);
             return View(producto);
         }
 
@@ -104,7 +105,8 @@ namespace WebComputadoras2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !decimal.IsNegative(producto.PrecioVenta)
+                && int.IsNegative(producto.Stock))
             {
                 try
                 {

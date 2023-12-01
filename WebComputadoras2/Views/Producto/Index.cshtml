@@ -14,13 +14,13 @@
     <thead>
         <tr>
             <th>
-             Descripcion
+             Descripción
             </th>
             <th>
-             UrlImagen
+             Imagen
             </th>
             <th>
-             Precio Venta
+             Precio de Venta
             </th>
             <th>
              Stock
@@ -29,16 +29,16 @@
              Usuario Registro
             </th>
             <th>
-             Fecha Registro
+             Fecha de Registro
             </th>
             <th>
             Estado
             </th>
             <th>
-             IdCategoria
+             Categoría
             </th>
             <th>
-            IdMarca
+            Marca
             </th>
             <th></th>
         </tr>
@@ -68,10 +68,10 @@
                 @(item.Estado == 1 ? "Activo" : "Inactivo")
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Id)
+                @item.IdCategoriaNavigation.Nombre
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdMarcaNavigation.Id)
+                @item.IdMarcaNavigation.Nombre
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |

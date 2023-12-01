@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Detalles Producto</h1>
+<h1>Detalles del Producto</h1>
 
 <div>
 
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-         Descripcion
+         Descripción
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descripcion)
@@ -24,7 +24,7 @@
             @Html.DisplayFor(model => model.UrlImagen)
         </dd>
         <dt class = "col-sm-2">
-        Precio Venta
+        Precio de Venta
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PrecioVenta)
@@ -42,7 +42,7 @@
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-         Fecha Registro
+         Fecha de Registro
         </dt>
         <dd class = "col-sm-10">
             @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
@@ -51,19 +51,19 @@
          Estado
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+            @(Model.Estado == 1 ? "Activo" : "Inactivo")
         </dd>
         <dt class = "col-sm-2">
-        Id Categoria
+        Categoria
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdCategoriaNavigation.Id)
+            @Model.IdCategoriaNavigation.Nombre
         </dd>
         <dt class = "col-sm-2">
-        Id Marca
+        Marca
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdMarcaNavigation.Id)
+            @Model.IdMarcaNavigation.Nombre
         </dd>
     </dl>
 </div>
