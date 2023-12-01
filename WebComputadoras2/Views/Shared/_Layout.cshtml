@@ -56,7 +56,13 @@
                         <a asp-controller="Categoria" asp-action="Index" class="nav-item nav-link">Categorías</a>
                         <a asp-controller="Marca" asp-action="Index" class="nav-item nav-link">Marcas</a>
                         <a asp-controller="Producto" asp-action="Index" class="nav-item nav-link">Productos</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a asp-controller="Rol" asp-action="Index" class="dropdown-item">Roles</a>
+                                <a asp-controller="Usuario" asp-action="Index" class="dropdown-item">Usuarios</a>
+                            </div>
+                        </div>
                         <a href="project.html" class="nav-item nav-link">Projects</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
