@@ -5,48 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Eliminar Categoria</h1>
+<div class="container-fluid my-3">
+    <div class="container">
+        <div class="row">
+            <h1>Eliminar Categoría</h1>
 
-<h3>Esta usted seguro de eliminar esta categoria?</h3>
-<div>
+            <h3>Esta usted seguro de eliminar esta categoría?</h3>
+            <div>
 
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-         Nombre
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-         Descripcion
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-         Usuario Registro
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioRegistro)
-        </dd>
-        <dt class = "col-sm-2">
-         Fecha Registro
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
-        </dd>
-        <dt class = "col-sm-2">
-         Estado
-        </dt>
-        <dd class = "col-sm-10">
-            @(Model.Estado == 1 ? "Activo" : "Inactivo")
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver atras</a>
-    </form>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        Nombre
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Descripción
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Descripcion)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Usuario Registro
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.UsuarioRegistro)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Fecha de Registro
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
+                    </dd>
+                    <dt class="col-sm-2">
+                        Estado
+                    </dt>
+                    <dd class="col-sm-10">
+                        @(Model.Estado == 1 ? "Activo" : "Inactivo")
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                    <a asp-action="Index">Volver atras</a>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
