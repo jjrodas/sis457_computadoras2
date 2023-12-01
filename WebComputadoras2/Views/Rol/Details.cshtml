@@ -24,7 +24,7 @@
             @Html.DisplayFor(model => model.UsuarioRegistro)
         </dd>
         <dt class = "col-sm-2">
-        Fecha Registro
+        Fecha de Registro
         </dt>
         <dd class = "col-sm-10">
             @Model.FechaRegistro.ToLongDateString() @Model.FechaRegistro.ToShortTimeString()
@@ -33,7 +33,7 @@
         Estado
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Estado)
+            @(Model.Estado == 1 ? "Activo" : "Inactivo")
         </dd>
     </dl>
 </div>
