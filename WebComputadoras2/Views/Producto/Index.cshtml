@@ -5,80 +5,87 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Producto</h1>
+<div class="container-fluid my-3">
+    <div class="container">
+        <div class="row">
+            <h1>Productos</h1>
 
-<p>
-    <a asp-action="Create">Crear Nuevo</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-             Descripción
-            </th>
-            <th>
-             Imagen
-            </th>
-            <th>
-             Precio de Venta
-            </th>
-            <th>
-             Stock
-            </th>
-            <th>
-             Usuario Registro
-            </th>
-            <th>
-             Fecha de Registro
-            </th>
-            <th>
-            Estado
-            </th>
-            <th>
-             Categoría
-            </th>
-            <th>
-            Marca
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UrlImagen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrecioVenta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaRegistro)
-            </td>
-            <td>
-                @(item.Estado == 1 ? "Activo" : "Inactivo")
-            </td>
-            <td>
-                @item.IdCategoriaNavigation.Nombre
-            </td>
-            <td>
-                @item.IdMarcaNavigation.Nombre
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <p>
+                <a asp-action="Create">Crear Nuevo</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Imagen
+                        </th>
+                        <th>
+                            Precio de Venta
+                        </th>
+                        <th>
+                            Stock
+                        </th>
+                        <th>
+                            Usuario Registro
+                        </th>
+                        <th>
+                            Fecha de Registro
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Categoría
+                        </th>
+                        <th>
+                            Marca
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UrlImagen)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrecioVenta)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Stock)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FechaRegistro)
+                            </td>
+                            <td>
+                                @(item.Estado == 1 ? "Activo" : "Inactivo")
+                            </td>
+                            <td>
+                                @item.IdCategoriaNavigation.Nombre
+                            </td>
+                            <td>
+                                @item.IdMarcaNavigation.Nombre
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
