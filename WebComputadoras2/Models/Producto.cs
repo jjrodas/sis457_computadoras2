@@ -15,7 +15,7 @@ public partial class Producto
 
     public string UrlImagen { get; set; } = null!;
 
-    public decimal PrecioVenta { get; set; }
+    public int PrecioVenta { get; set; }
 
     public int Stock { get; set; }
 

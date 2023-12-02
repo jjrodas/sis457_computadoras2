@@ -60,8 +60,7 @@ namespace WebComputadoras2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
-            if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !decimal.IsNegative(producto.PrecioVenta)
-                && !int.IsNegative(producto.Stock))
+            if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !int.IsNegative(producto.Stock))
             {
                 producto.UsuarioRegistro = "Sis-457";
                 producto.FechaRegistro = DateTime.Now;
@@ -105,8 +104,7 @@ namespace WebComputadoras2.Controllers
                 return NotFound();
             }
 
-            if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !decimal.IsNegative(producto.PrecioVenta)
-                && !int.IsNegative(producto.Stock))
+            if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !int.IsNegative(producto.Stock))
             {
                 try
                 {
