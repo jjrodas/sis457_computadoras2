@@ -9,197 +9,197 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebComputadoras2
 build_property.RootNamespace = WebComputadoras2
-build_property.ProjectDir = C:\Users\jota\Desktop\Proyecto final SIS457\proyecto_con_template_Ruben\sis457_computadoras2\WebComputadoras2\
+build_property.ProjectDir = C:\Users\Ruben\Desktop\sis457_computadoras2\WebComputadoras2\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\jota\Desktop\Proyecto final SIS457\proyecto_con_template_Ruben\sis457_computadoras2\WebComputadoras2
+build_property.MSBuildProjectDirectory = C:\Users\Ruben\Desktop\sis457_computadoras2\WebComputadoras2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Categoria/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Categoria/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Categoria/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Categoria/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Categoria/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Categoria/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Categoria/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Categoria/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Categoria/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Categoria/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhRGV0YWxsZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhRGV0YWxsZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhRGV0YWxsZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhRGV0YWxsZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/CompraDetalle/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhRGV0YWxsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Compra/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Compra/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Compra/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Compra/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Compra/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Compra/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Compra/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Compra/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Compra/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Compra/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcHJhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Home/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Home/Privacy.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Marca/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Marca/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Marca/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Marca/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Marca/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Marca/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Marca/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Marca/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Marca/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Marca/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Producto/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Producto/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Producto/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Producto/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Producto/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Producto/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Producto/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Producto/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Producto/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Producto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Proveedor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Rol/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Rol/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Rol/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Rol/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Rol/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Rol/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Rol/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Rol/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Rol/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Rol/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Shared/Error.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Usuario/Create.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Usuario/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Usuario/Delete.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Usuario/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Usuario/Details.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Usuario/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Usuario/Edit.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Usuario/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Usuario/Index.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/_ViewImports.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/_ViewStart.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jota/Desktop/Proyecto final SIS457/proyecto_con_template_Ruben/sis457_computadoras2/WebComputadoras2/Views/Shared/_Layout.cshtml]
+[C:/Users/Ruben/Desktop/sis457_computadoras2/WebComputadoras2/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mtuh3nr8pf

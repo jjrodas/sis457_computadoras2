@@ -65,7 +65,7 @@ namespace WebComputadoras2.Controllers
             {
                 producto.UsuarioRegistro = "Sis-457";
                 producto.FechaRegistro = DateTime.Now;
-                producto.Estado = 1;
+                producto.Estado = 1;                
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

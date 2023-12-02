@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\proyecto_con_template_Ruben\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj": {}
+    "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\proyecto_con_template_Ruben\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj": {
+    "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\proyecto_con_template_Ruben\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
+        "projectUniqueName": "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
         "projectName": "WebComputadoras2",
-        "projectPath": "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\proyecto_con_template_Ruben\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
-        "packagesPath": "C:\\Users\\jota\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\proyecto_con_template_Ruben\\sis457_computadoras2\\WebComputadoras2\\obj\\",
+        "projectPath": "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
+        "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ruben\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
