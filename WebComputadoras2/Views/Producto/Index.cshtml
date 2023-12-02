@@ -13,79 +13,21 @@
             <p>
                 <a asp-action="Create">Crear Nuevo</a>
             </p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            Descripción
-                        </th>
-                        <th>
-                            Imagen
-                        </th>
-                        <th>
-                            Precio de Venta
-                        </th>
-                        <th>
-                            Stock
-                        </th>
-                        <th>
-                            Usuario Registro
-                        </th>
-                        <th>
-                            Fecha de Registro
-                        </th>
-                        <th>
-                            Estado
-                        </th>
-                        <th>
-                            Categoría
-                        </th>
-                        <th>
-                            Marca
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Descripcion)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UrlImagen)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.PrecioVenta)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Stock)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.UsuarioRegistro)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FechaRegistro)
-                            </td>
-                            <td>
-                                @(item.Estado == 1 ? "Activo" : "Inactivo")
-                            </td>
-                            <td>
-                                @item.IdCategoriaNavigation.Nombre
-                            </td>
-                            <td>
-                                @item.IdMarcaNavigation.Nombre
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            @foreach (var item in Model)
+            {
+                <div class="card" style="width: 23rem;">
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <img src="@item.UrlImagen" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Descripcion</h5>
+                            <p class="card-text">Precio: @item.PrecioVenta Bs.</p>
+                            <a href="#" class="btn btn-primary">Agregar al carro.</a><br>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                        </div>
+                    </a>
+                </div>
+            }
         </div>
     </div>
 </div>

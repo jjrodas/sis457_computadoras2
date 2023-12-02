@@ -11211,19 +11211,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ruben\\.nuget\\packages\\": {}
+    "C:\\Users\\jota\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
+      "projectUniqueName": "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
       "projectName": "WebComputadoras2",
-      "projectPath": "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
-      "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ruben\\Desktop\\sis457_computadoras2\\WebComputadoras2\\obj\\",
+      "projectPath": "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\sis457_computadoras2\\WebComputadoras2\\WebComputadoras2.csproj",
+      "packagesPath": "C:\\Users\\jota\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jota\\Desktop\\Proyecto final SIS457\\sis457_computadoras2\\WebComputadoras2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ruben\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jota\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11293,7 +11293,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

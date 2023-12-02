@@ -1,0 +1,125 @@
+﻿-- Creación de la base de datos:
+CREATE DATABASE FinalComputadoras2
+
+
+-- Cración del Login y contraseña para el usuario de la base de datos:
+CREATE LOGIN usrComputadoras2F WITH PASSWORD='C0MPUMUND0',
+  DEFAULT_DATABASE = FinalComputadoras2,
+  CHECK_EXPIRATION = OFF,
+  CHECK_POLICY = ON
+GO
+
+USE FinalComputadoras2
+CREATE USER usrComputadoras2F FOR LOGIN usrComputadoras2F
+GO
+ALTER ROLE db_owner ADD MEMBER usrComputadoras2F
+GO
+
+-- Creación de las tablas:
+CREATE TABLE Categoria (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  nombre VARCHAR(30) NOT NULL,
+  descripcion VARCHAR(200) NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1
+);
+CREATE TABLE Marca (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  nombre VARCHAR(30) NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1
+);
+CREATE TABLE Producto (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idCategoria INT NOT NULL,
+  idMarca INT NOT NULL,
+  descripcion VARCHAR(700) NOT NULL,
+  urlImagen VARCHAR(500) NOT NULL,
+  precioVenta DECIMAL NOT NULL CHECK(precioVenta > 0),
+  stock INT NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1,
+  CONSTRAINT fk_Producto_Categoria FOREIGN KEY(idCategoria) REFERENCES Categoria(id),
+  CONSTRAINT fk_Producto_Marca FOREIGN KEY(idMarca) REFERENCES Marca(id)
+);
+CREATE TABLE Rol (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  nombre VARCHAR (20) NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1
+); 
+CREATE TABLE Usuario (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idRol INT NOT NULL,
+  nombres VARCHAR(50) NOT NULL,
+  apellidos VARCHAR(50) NOT NULL,
+  email VARCHAR(70) NOT NULL,
+  usuario VARCHAR(20) NOT NULL,
+  clave VARCHAR(30) NOT NULL,
+  telefono VARCHAR(15) NULL,
+  fechaNacimiento DATE NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1
+  CONSTRAINT fk_Usuario_Rol FOREIGN KEY(idRol) REFERENCES Rol(id)
+);
+CREATE TABLE Venta (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idUsuario INT NOT NULL,
+  fecha DATE NOT NULL DEFAULT GETDATE(),
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1,
+  CONSTRAINT fk_Venta_Usuario FOREIGN KEY(idUsuario) REFERENCES Usuario(id)
+);
+CREATE TABLE VentaDetalle (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idProducto INT NOT NULL,
+  idVenta INT NOT NULL,
+  cantidad INT NOT NULL CHECK(cantidad > 0),
+  total DECIMAL NOT NULL,
+  fechaVenta DATE NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1,
+  CONSTRAINT fk_VentaDetalle_Producto FOREIGN KEY(idProducto) REFERENCES Producto(id),
+  CONSTRAINT fk_VentaDetalle_Venta FOREIGN KEY(idVenta) REFERENCES Venta(id)
+);
+CREATE TABLE Proveedor (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  nit BIGINT NOT NULL,
+  razonSocial VARCHAR(100) NOT NULL,
+  direccion VARCHAR(250) NULL,
+  telefono VARCHAR(30) NOT NULL,
+  representante VARCHAR(100) NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1
+);
+CREATE TABLE Compra (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idProveedor INT NOT NULL,
+  transaccion INT NOT NULL,
+  fecha DATE NOT NULL DEFAULT GETDATE(),
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1,
+  CONSTRAINT fk_Compra_Proveedor FOREIGN KEY(idProveedor) REFERENCES Proveedor(id)
+);
+CREATE TABLE CompraDetalle (
+  id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  idCompra INT NOT NULL,
+  idProducto INT NOT NULL,
+  cantidad DECIMAL NOT NULL CHECK(cantidad > 0),
+  precioUnitario DECIMAL NOT NULL,
+  total DECIMAL NOT NULL,
+  usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
+  fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
+  estado SMALLINT NOT NULL DEFAULT 1,
+  CONSTRAINT fk_CompraDetalle_Compra FOREIGN KEY(idCompra) REFERENCES Compra(id),
+  CONSTRAINT fk_CompraDetalle_Producto FOREIGN KEY(idProducto) REFERENCES Producto(id)
+);

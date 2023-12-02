@@ -61,7 +61,7 @@ namespace WebComputadoras2.Controllers
         public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
             if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !decimal.IsNegative(producto.PrecioVenta)
-                && int.IsNegative(producto.Stock))
+                && !int.IsNegative(producto.Stock))
             {
                 producto.UsuarioRegistro = "Sis-457";
                 producto.FechaRegistro = DateTime.Now;
@@ -106,7 +106,7 @@ namespace WebComputadoras2.Controllers
             }
 
             if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !decimal.IsNegative(producto.PrecioVenta)
-                && int.IsNegative(producto.Stock))
+                && !int.IsNegative(producto.Stock))
             {
                 try
                 {
