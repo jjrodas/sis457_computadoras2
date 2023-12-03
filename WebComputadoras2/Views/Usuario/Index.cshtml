@@ -11,7 +11,7 @@
             <h1>Usuarios</h1>
 
             <p>
-                <a asp-action="Create">Crear Nuevo</a>
+                <a asp-action="Create"><i class="fas fa-plus me-2"></i>Crear Nuevo</a>
             </p>
             <table class="table">
                 <thead>
@@ -27,9 +27,6 @@
                         </th>
                         <th>
                             Usuario
-                        </th>
-                        <th>
-                            Clave
                         </th>
                         <th>
                             Teléfono
@@ -69,13 +66,10 @@
                                 @Html.DisplayFor(modelItem => item.Usuario1)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Clave)
-                            </td>
-                            <td>
                                 @Html.DisplayFor(modelItem => item.Telefono)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                                @item.FechaNacimiento.ToShortDateString()
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.UsuarioRegistro)
@@ -90,9 +84,9 @@
                                 @item.IdRolNavigation.Nombre
                             </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver"><i class="fas fa-eye me-2"></i></a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fas fa-edit me-2"></i></a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2"></i></a>
                             </td>
                         </tr>
                     }

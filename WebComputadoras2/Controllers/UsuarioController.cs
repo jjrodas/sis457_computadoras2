@@ -61,6 +61,7 @@ namespace WebComputadoras2.Controllers
             if (!string.IsNullOrEmpty(usuario.Nombres) && !string.IsNullOrEmpty(usuario.Apellidos) && !string.IsNullOrEmpty(usuario.Email)
                 && !string.IsNullOrEmpty(usuario.Usuario1) && !string.IsNullOrEmpty(usuario.Clave))
             {
+                usuario.Clave = Util.Encrypt(usuario.Clave);
                 usuario.UsuarioRegistro = "Sis-457";
                 usuario.FechaRegistro = DateTime.Now;
                 usuario.Estado = 1;

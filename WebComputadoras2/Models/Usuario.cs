@@ -21,7 +21,7 @@ public partial class Usuario
 
     public string? Telefono { get; set; }
 
-    public DateTime? FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; }
 
     public string UsuarioRegistro { get; set; } = null!;
 

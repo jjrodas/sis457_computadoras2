@@ -11,7 +11,9 @@
             <h1>Productos</h1>
 
             <p>
-                <a asp-action="Create">Crear Nuevo</a>
+                <a asp-action="Create">
+                    <i class="fas fa-plus me-2"></i>Crear Nuevo
+                </a>
             </p>
             @foreach (var item in Model)
             {
@@ -22,8 +24,8 @@
                             <h5 class="card-title">@item.Descripcion</h5>
                             <p class="card-text">Precio: @item.PrecioVenta Bs.</p>
                             <a href="#" class="btn btn-primary">Añadir al carrito</a><br>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Editar"><i class="fas fa-edit me-2"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Eliminar"><i class="fas fa-trash me-2"></i></a>
                         </div>
                     </a>
                 </div>
