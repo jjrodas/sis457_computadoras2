@@ -53,20 +53,31 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Inicio</a>
-                        <a asp-controller="Categoria" asp-action="Index" class="nav-item nav-link">Categorías</a>
-                        <a asp-controller="Marca" asp-action="Index" class="nav-item nav-link">Marcas</a>
                         <a asp-controller="Producto" asp-action="Index" class="nav-item nav-link">Productos</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a asp-controller="Rol" asp-action="Index" class="dropdown-item">Roles</a>
-                                <a asp-controller="Usuario" asp-action="Index" class="dropdown-item">Usuarios</a>
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <a asp-controller="Categoria" asp-action="Index" class="nav-item nav-link">Categorías</a>
+                            <a asp-controller="Marca" asp-action="Index" class="nav-item nav-link">Marcas</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Admin</a>
+                                <div class="dropdown-menu bg-light mt-2">
+                                    <a asp-controller="Rol" asp-action="Index" class="dropdown-item">Roles</a>
+                                    <a asp-controller="Usuario" asp-action="Index" class="dropdown-item">Usuarios</a>
+                                </div>
                             </div>
-                        </div>
+                        }
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                    <div class="d-flex align-items-center justify-content-center ms-4 ">
+                        @if (User.Identity?.IsAuthenticated == false)
+                        {
+                            <a asp-controller="Account" asp-action="Login" style="color: wheat">Iniciar Sesión</a>
+                        }
+                        else
+                        {
+                            @await Html.PartialAsync("_LogoutPartial")
+                        }
+                    </div>
                 </div>
             </nav>
         </div>
