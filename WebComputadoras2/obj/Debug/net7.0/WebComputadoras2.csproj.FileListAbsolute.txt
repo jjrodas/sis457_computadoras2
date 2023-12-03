@@ -832,3 +832,6 @@ C:\Users\jota\Desktop\Proyecto final SIS457\sis457_computadoras2\WebComputadoras
 C:\Users\jota\Desktop\Proyecto final SIS457\sis457_computadoras2\WebComputadoras2\obj\Debug\net7.0\WebComputadoras2.pdb
 C:\Users\jota\Desktop\Proyecto final SIS457\sis457_computadoras2\WebComputadoras2\obj\Debug\net7.0\WebComputadoras2.genruntimeconfig.cache
 C:\Users\jota\Desktop\Proyecto final SIS457\sis457_computadoras2\WebComputadoras2\obj\Debug\net7.0\ref\WebComputadoras2.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\WebComputadoras2\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\WebComputadoras2\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\Ruben\Desktop\sis457_computadoras2\WebComputadoras2\bin\Debug\net7.0\Snickler.EFCore.dll
