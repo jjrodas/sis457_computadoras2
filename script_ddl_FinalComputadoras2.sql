@@ -37,7 +37,7 @@ CREATE TABLE Producto (
   idMarca INT NOT NULL,
   descripcion VARCHAR(700) NOT NULL,
   urlImagen VARCHAR(500) NOT NULL,
-  precioVenta DECIMAL NOT NULL CHECK(precioVenta > 0),
+  precioVenta INT NOT NULL CHECK(precioVenta > 0),
   stock INT NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
@@ -61,7 +61,7 @@ CREATE TABLE Usuario (
   usuario VARCHAR(20) NOT NULL,
   clave VARCHAR(30) NOT NULL,
   telefono VARCHAR(15) NULL,
-  fechaNacimiento DATE NULL,
+  fechaNacimiento DATE NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1

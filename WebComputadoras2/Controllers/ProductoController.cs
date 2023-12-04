@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ namespace WebComputadoras2.Controllers
         }
 
         // GET: Producto/Create
+        [Authorize(Policy = "SuperAdmin")]
         public IActionResult Create()
         {
             ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Nombre");
@@ -58,6 +60,7 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Create([Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock")] Producto producto)
         {
             if (!string.IsNullOrEmpty(producto.Descripcion) && !string.IsNullOrEmpty(producto.UrlImagen) && !int.IsNegative(producto.Stock))
@@ -75,6 +78,7 @@ namespace WebComputadoras2.Controllers
         }
 
         // GET: Producto/Edit/5
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Productos == null)
@@ -97,6 +101,7 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IdCategoria,IdMarca,Descripcion,UrlImagen,PrecioVenta,Stock,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
         {
             if (id != producto.Id)
@@ -130,6 +135,7 @@ namespace WebComputadoras2.Controllers
         }
 
         // GET: Producto/Delete/5
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Productos == null)
@@ -152,6 +158,7 @@ namespace WebComputadoras2.Controllers
         // POST: Producto/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Productos == null)

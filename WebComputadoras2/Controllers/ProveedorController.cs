@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
+    [Authorize(Policy = "SuperAdmin")]
     public class ProveedorController : Controller
     {
         private readonly FinalComputadoras2Context _context;

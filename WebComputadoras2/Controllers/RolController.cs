@@ -10,7 +10,7 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "SuperAdmin")]
     public class RolController : Controller
     {
         private readonly FinalComputadoras2Context _context;

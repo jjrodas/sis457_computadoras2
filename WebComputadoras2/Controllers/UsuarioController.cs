@@ -10,7 +10,6 @@ using WebComputadoras2.Models;
 
 namespace WebComputadoras2.Controllers
 {
-    [Authorize]
     public class UsuarioController : Controller
     {
         private readonly FinalComputadoras2Context _context;
@@ -21,6 +20,7 @@ namespace WebComputadoras2.Controllers
         }
 
         // GET: Usuario
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var finalComputadoras2Context = _context.Usuarios.Where(x => x.Estado != -1).Include(u => u.IdRolNavigation);
@@ -28,6 +28,7 @@ namespace WebComputadoras2.Controllers
         }
 
         // GET: Usuario/Details/5
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Usuarios == null)
@@ -97,6 +98,7 @@ namespace WebComputadoras2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IdRol,Nombres,Apellidos,Email,Usuario1,Clave,Telefono,FechaNacimiento,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
         {
             if (id != usuario.Id)
@@ -130,6 +132,7 @@ namespace WebComputadoras2.Controllers
         }
 
         // GET: Usuario/Delete/5
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Usuarios == null)
@@ -151,6 +154,7 @@ namespace WebComputadoras2.Controllers
         // POST: Usuario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Policy = "SuperAdmin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Usuarios == null)

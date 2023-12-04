@@ -54,7 +54,7 @@
                     <div class="navbar-nav ms-auto">
                         <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Inicio</a>
                         <a asp-controller="Producto" asp-action="Index" class="nav-item nav-link">Productos</a>
-                        @if (User.Identity?.IsAuthenticated == true)
+                        @if (User.IsInRole("Administrador"))
                         {
                             <a asp-controller="Categoria" asp-action="Index" class="nav-item nav-link">Categorías</a>
                             <a asp-controller="Marca" asp-action="Index" class="nav-item nav-link">Marcas</a>
